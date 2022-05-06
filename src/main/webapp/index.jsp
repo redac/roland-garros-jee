@@ -11,9 +11,6 @@
 	tailwind.config = {
 		theme : {
 			extend : {
-				backgroundImage: {
-			        'bgimage': "url('/public/bg.png')",
-			      },
 				colors : {
 					rolandorange : '#d35320',
 					rolandgreen : '#05482f',
@@ -26,14 +23,14 @@
 </head>
 <body>
 	<div
-		class="flex flex-col h-screen justify-between font-sans antialiased bg-grey-lightest">
+		class="flex flex-col bg-[url('https://images.unsplash.com/photo-1465125672495-63cdc2fa22ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80')] h-screen justify-between font-sans antialiased bg-grey-lightest">
 		<!-- Top Nav -->
 		<jsp:include page='header.jsp' />
 		<!-- Content -->
-		<div class="flex justify-center bg-grey-lightest">
+		<div class="flex justify-center items-center bg-grey-lightest">
 			<h1 class="text-6xl font-extrabold">
 				<span
-					class="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-rolandorange to-rolandgreen">Welcome
+					class="bg-clip-text drop-shadow-md text-slate-200 hover:text-rolandgreen">Welcome
 					to the Roland-Garros website.</span>
 			</h1>
 		</div>

@@ -11,6 +11,9 @@
 	tailwind.config = {
 		theme : {
 			extend : {
+				backgroundImage: {
+			        'bgimage': "url('/public/bg.png')",
+			      },
 				colors : {
 					rolandorange : '#d35320',
 					rolandgreen : '#05482f',

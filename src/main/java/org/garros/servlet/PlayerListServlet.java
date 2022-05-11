@@ -35,16 +35,15 @@ public class PlayerListServlet extends HttpServlet {
 		}
 		searchHistory.add(searchText);
 
-		List<Player> players = null;
+		List<Player> players = new ArrayList<Player>();
 		if (searchText == null) {
 			players = playerService.getAllPlayers();
 		} else {
 			players = playerService.getPlayerByName(searchText);
 		}
-
 		request.setAttribute("listPlayers", players);
 
-		String pageName = "/pages/playerlist.jsp";
+		String pageName = "/playerlist.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);

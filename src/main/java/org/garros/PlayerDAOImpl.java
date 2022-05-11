@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerDAOImpl implements PlayerDAO {
-	
+
 	public List<Player> findByQuery(String query) {
 		Connection connection = DBManager.getInstance().getConnection();
 		List<Player> players = new ArrayList<Player>();
@@ -18,7 +18,7 @@ public class PlayerDAOImpl implements PlayerDAO {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
 			while (rs.next()) {
-				int id = rs.getInt("id");
+				int id = rs.getInt("player_id");
 				String firstname = rs.getString("firstname");
 				String lastname = rs.getString("lastname");
 				int age = rs.getInt("age");
@@ -39,17 +39,20 @@ public class PlayerDAOImpl implements PlayerDAO {
 
 		return players;
 	}
-	
+
 	@Override
 	public List<Player> findByName(String searchText) {
-		
-		return findByQuery("SELECT player_id, firstname, lastname, age, category, country, ranking, hand FROM players WHERE firstname like'%"+searchText+"' OR lastname like'%"+searchText+"';");
+
+		return findByQuery(
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand FROM players WHERE firstname like'%"
+						+ searchText + "' OR lastname like'%" + searchText + "';");
 	}
-	
+
 	@Override
 	public List<Player> findByAll() {
-		
-		return findByQuery("SELECT player_id, firstname, lastname, age, category, country, ranking, hand FROM players;");
+
+		return findByQuery(
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand FROM players;");
 	}
 
 }

@@ -44,7 +44,7 @@ public class PlayerListServlet extends HttpServlet {
 
 		request.setAttribute("listPlayers", players);
 
-		String pageName = "/playerlist.jsp";
+		String pageName = "/pages/playerlist.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);

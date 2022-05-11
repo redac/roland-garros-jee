@@ -74,12 +74,22 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 												</div>
 												<div class="ml-3">
 													<%
-													String firstname = "Loukas";
-													String lastname = "Ducul";
-													int id = 3;
+													for (Player player : listPlayers) {
+														int id = player.getId();
+														String firstname = player.getFirstname();
+														String lastname = player.getLastname();
+														int age = player.getAge();
+														String category = player.getCategory();
+														String country = player.getCountry();
+														int ranking = player.getRanking();
+														String hand = player.getHand();
 													%>
-													<p class="text-gray-900 whitespace-no-wrap"><%=firstname%> <%=lastname%></p>
-													<p class="text-gray-600 whitespace-no-wrap"><%=id%></p>
+													<p class="text-gray-900 whitespace-no-wrap"><%=firstname%>
+														<%=lastname%></p>
+													<p class="text-gray-600 whitespace-no-wrap"><%=id%></p><!--  -->
+													<%
+													}
+													%>
 												</div>
 											</div>
 										</td>
@@ -116,23 +126,6 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 											</button>
 										</td>
 									</tr>
-									<%-- <%
-									for (Player player : listPlayers) {
-										int id = player.getId();
-										String firstname = player.getFirstname();
-										String lastname = player.getLastname();
-										int age = player.getAge();
-										String category = player.getCategory();
-										String country = player.getCountry();
-										int ranking = player.getRanking();
-										String hand = player.getHand();
-									%>
-									<tr>
-										<td><%=age%></td>
-									</tr>
-									<%
-									}
-									%> --%>
 								</tbody>
 							</table>
 						</div>

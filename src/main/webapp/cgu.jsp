@@ -27,7 +27,7 @@
 		<!-- Top Nav -->
 		<jsp:include page='header.jsp' />
 		<!-- Content -->
-		<div class="w-full break-word m-10 p-1 bg-grey-lightest"
+		<div class="break-word m-10 p-1 bg-grey-lightest"
 			style="padding-top: 4rem;">
 			<h1
 				class="font-bold text-uppercase underline

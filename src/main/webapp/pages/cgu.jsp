@@ -25,7 +25,7 @@
 	<div
 		class="flex flex-col h-screen font-sans antialiased bg-grey-lightest">
 		<!-- Top Nav -->
-		<jsp:include page='header.jsp' />
+		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
 		<div class="break-word m-10 p-1 bg-grey-lightest"
 			style="padding-top: 4rem;">
@@ -245,7 +245,7 @@
 
 		</div>
 		<!-- Footer -->
-		<jsp:include page='footer.jsp' />
+		<jsp:include page='components/footer.jsp' />
 	</div>
 
 </body>

@@ -30,7 +30,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 	<div
 		class="flex flex-col h-screen font-sans antialiased bg-grey-lightest">
 		<!-- Top Nav -->
-		<jsp:include page='header.jsp' />
+		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
 		<div class="flex justify-center items-center bg-grey-lightest">
 			<div class="container mx-auto px-4 sm:px-8">
@@ -142,7 +142,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 		</div>
 	</div>
 	<!-- Footer -->
-	<jsp:include page='footer.jsp' />
+	<jsp:include page='components/footer.jsp' />
 	</div>
 </body>
 </html>

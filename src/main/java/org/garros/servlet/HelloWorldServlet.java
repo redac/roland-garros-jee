@@ -1,4 +1,4 @@
-package org.garros;
+package org.garros.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;

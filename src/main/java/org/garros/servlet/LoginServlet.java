@@ -36,11 +36,13 @@ public class LoginServlet extends HttpServlet {
 		}
 	}
 
+	//GET à /login -> affichage de login.jsp pour se connecter
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
 	}
 
+	//POST à /login -> tentative de connexion
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);

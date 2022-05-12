@@ -23,29 +23,31 @@
 </head>
 <body class="flex flex-col min-h-screen">
 	<div>
-	<!-- Top Nav -->
-	<jsp:include page='components/header.jsp' />
+		<!-- Top Nav -->
+		<jsp:include page='components/header.jsp' />
 	</div>
-	
+
 	<!-- Content -->
-	<div class="w-full flex-grow bg-grey-lightest" style="padding-top: 4rem;">
+	<div class="w-full flex-grow bg-grey-lightest"
+		style="padding-top: 4rem;">
 		<div class="container mx-auto py-8">
 			<div class="w-5/6 lg:w-1/2 mx-auto bg-white rounded shadow">
 				<div
 					class="py-4 px-8 text-black text-xl border-b border-grey-lighter">Login
 					with an existing administrator account</div>
-				<form class="py-4 px-8">
+				<form class="py-4 px-8" action="login" method="POST">
 					<div class="mb-4">
 						<label class="block text-grey-darker text-sm font-bold mb-2"
 							for="first_name">Username</label> <input
 							class="appearance-none outline-rolandgreen border rounded w-full py-2 px-3 text-grey-darker"
-							id="username" type="text" placeholder="Your username">
+							name="username" type="text" placeholder="Your username" required>
 					</div>
 					<div class="mb-4">
 						<label class="block text-grey-darker text-sm font-bold mb-2"
 							for="password">Password</label> <input
 							class="appearance-none outline-rolandgreen border rounded w-full py-2 px-3 text-grey-darker"
-							id="password" type="password" placeholder="Your secure password">
+							name="password" type="password" minlength="6"
+							placeholder="Your secure password" required>
 						<p class="text-grey text-xs mt-1">At least 6 characters</p>
 					</div>
 					<div class="flex items-center justify-between mt-8">

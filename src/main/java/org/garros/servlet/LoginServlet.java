@@ -1,6 +1,13 @@
 package org.garros.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.garros.User;
+import org.garros.UserService;
+import org.garros.UserServiceImpl;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -14,7 +21,7 @@ import jakarta.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
+	private UserService userService = new UserServiceImpl();
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
@@ -37,5 +44,19 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
+		resp.setContentType("text/html");
+		PrintWriter out = resp.getWriter();
+
+		// Accept user login info from the login page
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+
+		// DB related
+		List<User> users = new ArrayList<User>();
+
+		users = userService.getPlayerByUsername(username);
+		
+		System.out.println(users);
+
 	}
 }

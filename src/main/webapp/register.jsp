@@ -66,14 +66,14 @@
 					</div>
 					<div class="flex items-center justify-between mt-8">
 						<button
-							class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full"
+							class="bg-transparent text-gray-900 text-l font-bold transition duration-150 border-b-8 border-transparent hover:border-rolandorange"
 							type="submit">Sign Up</button>
 					</div>
 				</div>
 			</div>
 			<p class="text-center my-4">
 				<a href="login.jsp"
-					class="text-rolandorange text-sm no-underline hover:text-grey-darker">Already
+					class="text-rolandorange text-sm no-underline hover:text-grey-darker transition duration-150 border-b-2 border-transparent hover:border-rolandgreen">Already
 					have an account? Login</a>
 			</p>
 		</div>

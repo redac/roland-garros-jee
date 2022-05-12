@@ -34,7 +34,7 @@
 				<div
 					class="py-4 px-8 text-black text-xl border-b border-grey-lighter">Login
 					with an existing administrator account</div>
-				<div class="py-4 px-8">
+				<form class="py-4 px-8">
 					<div class="mb-4">
 						<label class="block text-grey-darker text-sm font-bold mb-2"
 							for="first_name">Username</label> <input
@@ -50,15 +50,15 @@
 					</div>
 					<div class="flex items-center justify-between mt-8">
 						<button
-							class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full"
-							type="submit">Sign Up</button>
+							class="bg-transparent text-gray-900 text-l font-bold transition duration-150 border-b-8 border-transparent hover:border-rolandorange"
+							type="submit">Log In</button>
 					</div>
-				</div>
+				</form>
 			</div>
 			<p class="text-center my-4">
 				<a href="register.jsp"
-					class="text-rolandorange text-sm no-underline hover:text-grey-darker">Don't
-					have a login? Sign Up</a>
+					class="text-rolandorange text-sm no-underline hover:text-grey-darker transition duration-150 border-b-2 border-transparent hover:border-rolandgreen">Don't
+					have a account? Sign Up</a>
 			</p>
 		</div>
 	</div>

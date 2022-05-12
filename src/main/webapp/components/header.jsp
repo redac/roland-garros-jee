@@ -47,7 +47,7 @@
 	<form class="container mx-auto">
 		<div class="w-full flex justify-between items-center py-4 px-8">
 			<!-- Brand -->
-			<a href="index.jsp"
+			<a href="home"
 				class="text-center text-rolandgreen underline
 						decoration-rolandorange font-bold">Roland-Garros</a>
 			<!-- Navigation -->
@@ -55,7 +55,7 @@
 				<a href="PlayerList"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Players</a>
 				<a href="#" class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
-				<a href="login.jsp"
+				<a href="login"
 					class="hover:roland-orange rounded-full no-underline mx-2 px-4 py-2">Admin
 					Login</a>
 			</div>

@@ -56,7 +56,7 @@
 				</form>
 			</div>
 			<p class="text-center my-4">
-				<a href="register.jsp"
+				<a href="register"
 					class="text-rolandorange text-sm no-underline hover:text-grey-darker transition duration-150 border-b-2 border-transparent hover:border-rolandgreen">Don't
 					have a account? Sign Up</a>
 			</p>

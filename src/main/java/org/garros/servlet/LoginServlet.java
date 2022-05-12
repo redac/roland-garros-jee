@@ -10,17 +10,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/")
-public class MainServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
-		HttpSession session = request.getSession();
-	
-		String pageName = "/playerlist.jsp";
+		String pageName = "/login.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);

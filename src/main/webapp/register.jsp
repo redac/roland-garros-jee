@@ -72,7 +72,7 @@
 				</div>
 			</div>
 			<p class="text-center my-4">
-				<a href="login.jsp"
+				<a href="login"
 					class="text-rolandorange text-sm no-underline hover:text-grey-darker transition duration-150 border-b-2 border-transparent hover:border-rolandgreen">Already
 					have an account? Login</a>
 			</p>

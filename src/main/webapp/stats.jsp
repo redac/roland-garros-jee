@@ -32,7 +32,7 @@ List<Player> listPlayersTime = (List<Player>) request.getAttribute("listPlayersT
 		}
 	}
 </script>
-<title>Statistiques — Roland-Garros</title>
+<title>Statistics — Roland-Garros</title>
 </head>
 <body>
 	<div

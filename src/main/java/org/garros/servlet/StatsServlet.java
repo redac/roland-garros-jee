@@ -16,8 +16,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/Statistique")
-public class StatistiqueServlet extends HttpServlet {
+@WebServlet("/stats")
+public class StatsServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService2 = new PlayerServiceImpl();
@@ -51,7 +51,7 @@ public class StatistiqueServlet extends HttpServlet {
 		playersTime = playerService2.getPlayerByTime();
 		request.setAttribute("listPlayersTime", playersTime);
 
-		String pageName = "/statistique.jsp";
+		String pageName = "/stats.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);

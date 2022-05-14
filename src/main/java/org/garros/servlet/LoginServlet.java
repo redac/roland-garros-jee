@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.garros.Player;
 import org.garros.User;
 import org.garros.UserService;
 import org.garros.UserServiceImpl;
@@ -36,13 +37,13 @@ public class LoginServlet extends HttpServlet {
 		}
 	}
 
-	//GET à /login -> affichage de login.jsp pour se connecter
+	// GET /login -> affichage de login.jsp pour se connecter
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
 	}
 
-	//POST à /login -> tentative de connexion
+	// POST /login -> tentative de connexion
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
@@ -55,10 +56,15 @@ public class LoginServlet extends HttpServlet {
 
 		// DB related
 		List<User> users = new ArrayList<User>();
-
-		users = userService.getPlayerByUsername(username);
-		
-		System.out.println(users);
-
+		User user = null;
+		Boolean UserExists = false;
+		users = userService.getUserByQuery("SELECT EXISTS ( SELECT * FROM users WHERE username = '" + username
+				+ "' AND pwd	 = '" + password + "' )");
+		if (!users.isEmpty()) {
+			UserExists = true;
+			user = (User) userService.getUserByQuery(
+					"SELECT * FROM users WHERE username = '" + username + "'AND pwd = '" + password + "';");
+			System.out.println(user);
+		}
 	}
 }

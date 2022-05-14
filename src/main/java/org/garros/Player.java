@@ -9,6 +9,8 @@ public class Player {
 	private String country;
 	private int ranking;
 	private String hand;
+	private int nb_timePlayed;
+	private int nb_win;
 
 	public int getId() {
 		return id;
@@ -73,6 +75,23 @@ public class Player {
 	public void setRanking(int ranking) {
 		this.ranking = ranking;
 	}
+	
+	public int getNbWin() {
+		return nb_win;
+	}
+	
+	public void setNbWin(int nb_win) {
+		this.nb_win = nb_win;
+	}
+	
+	public int getNbTimePlayed() {
+		return nb_timePlayed;
+	}
+	
+	public void setNbTimePlayed(int nb_timePlayed) {
+		this.nb_timePlayed = nb_timePlayed;
+	}
+
 
 	/**
 	 * Player object constructor
@@ -86,7 +105,7 @@ public class Player {
 	 * @param hand
 	 */
 	public Player(int id, String firstname, String lastname, int age, String category, String country, int ranking,
-			String hand) {
+			String hand, int nb_win, int nb_timePlayed) {
 		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -95,6 +114,8 @@ public class Player {
 		this.country = country;
 		this.ranking = ranking;
 		this.hand = hand;
+		this.nb_win = nb_win;
+		this.nb_timePlayed = nb_timePlayed;
 	}
 
 }

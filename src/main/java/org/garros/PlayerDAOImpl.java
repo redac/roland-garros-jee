@@ -26,10 +26,12 @@ public class PlayerDAOImpl implements PlayerDAO {
 				String country = rs.getString("country");
 				int ranking = rs.getInt("ranking");
 				String hand = rs.getString("hand");
+				int nb_win = rs.getInt("nb_win");
+				int nb_timePlayed = rs.getInt("nb_timePlayed");
 				/**
 				 * Create the a player object from the SQL result set
 				 */
-				Player player = new Player(id, firstname, lastname, age, category, country, ranking, hand);
+				Player player = new Player(id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed);
 				players.add(player);
 			}
 		} catch (SQLException e) {
@@ -44,7 +46,7 @@ public class PlayerDAOImpl implements PlayerDAO {
 	public List<Player> findByName(String searchText) {
 
 		return findByQuery(
-				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand FROM players WHERE firstname like'%"
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, nb_win, nb_timePlayed hand FROM players WHERE firstname like'%"
 						+ searchText + "' OR lastname like'%" + searchText + "';");
 	}
 
@@ -52,7 +54,23 @@ public class PlayerDAOImpl implements PlayerDAO {
 	public List<Player> findByAll() {
 
 		return findByQuery(
-				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand FROM players;");
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed FROM players;");
 	}
+
+	@Override
+	public List<Player> findByWin() {
+
+		return findByQuery(
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed FROM players ORDER BY nb_win DESC;");
+	}
+	
+	@Override
+	public List<Player> findByTime() {
+
+		return findByQuery(
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed FROM players ORDER BY nb_timePlayed DESC;");
+	}
+	
+	
 
 }

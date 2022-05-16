@@ -16,13 +16,13 @@ public class PlayerServiceImpl implements PlayerService {
 	}
 
 	@Override
-	public List<Player> getPlayerByWin() {
-		return playerDAO.findByWin();
+	public List<Player> getPlayerByWin(String category) {
+		return playerDAO.findByWin(category);
 	}
 
 	@Override
-	public List<Player> getPlayerByTime() {
-		return playerDAO.findByTime();
+	public List<Player> getPlayerByTime(String category) {
+		return playerDAO.findByTime(category);
 	}
 
 }

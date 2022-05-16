@@ -3,17 +3,47 @@ package org.garros;
 /***
  * 
  * Classe java qui gère une connection utilisateur
- * obj : n'avoir qu'une instance et utiliser ConnectionUser.getConnection
+ * Singleton
  *
  */
 public class ConnectionUser {
-	private User user; 		//utilsateur connecté
-	private String etat;	//connected/disconnected
 	
-	public ConnectionUser(User u) {
-		this.user = u;
-		this.etat = "connected";
+	private static ConnectionUser instance = null;			// instance de la classe
+	private User user; 										// utilsateur connecté
+	private String etat = "disconnected";					// connected/disconnected
+	  
+    //constructeur 
+    private ConnectionUser() { 
+    	
+    } 
+    
+    // Donne accès à notre instance
+    public static ConnectionUser getInstance() {
+    	//Si non instancié, on l'instancie
+    	if(instance==null) {
+    		instance = new ConnectionUser();
+    	}
+        return instance; 
+    }
+
+	public User getUser() {
+		return user;
 	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String getEtat() {
+		return etat;
+	}
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	} 
+  
+    
+    
 	
 	
 }

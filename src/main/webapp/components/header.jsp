@@ -1,5 +1,8 @@
+<%@ page import="org.garros.*"%>
+<%@ page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,9 +58,22 @@
 				<a href="PlayerList"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Players</a>
 				<a href="#" class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
-				<a href="login"
-					class="hover:roland-orange rounded-full no-underline mx-2 px-4 py-2">Admin
-					Login</a>
+				
+				<%
+				if(ConnectionUser.getInstance().getEtat()!="connected"){
+					%>
+					<!-- Pas connecte -->
+					<a href="login" class="hover:roland-orange rounded-full no-underline mx-2 px-4 py-2"> Admin Login</a> <%
+				}
+				else {
+					User user = ConnectionUser.getInstance().getUser();
+					%> 
+					<!-- Connecte -->
+					<%=user.getUsername() %>
+					<%
+				}
+				
+				%>
 			</div>
 		</div>
 	</form>

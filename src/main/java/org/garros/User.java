@@ -18,6 +18,10 @@ public class User {
 		this.accountType = accountType;
 		this.password = password;
 	}
+	
+	public User() {
+		
+	}
 
 	public int getUid() {
 		return uid;

@@ -2,12 +2,19 @@ package org.garros.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.garros.DBManager;
+import org.garros.Player;
 import org.garros.User;
 import org.garros.UserService;
 import org.garros.UserServiceImpl;
+import org.garros.ConnectionUser;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -45,20 +52,39 @@ public class LoginServlet extends HttpServlet {
 	//POST à /login -> tentative de connexion
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doProcess(req, resp);
-		resp.setContentType("text/html");
-		PrintWriter out = resp.getWriter();
-
+		
 		// Accept user login info from the login page
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 
-		// DB related
-		List<User> users = new ArrayList<User>();
-
-		users = userService.getPlayerByUsername(username);
+		System.out.println(username);
+		System.out.println(password);
 		
-		System.out.println(users);
+		Connection connection = DBManager.getInstance().getConnection();
+		Statement statement;
+		ResultSet rs;
+		User user = new User();
+		user.setUsername(username);
+		try {
+			statement = connection.createStatement();
+			String query = "SELECT * FROM users WHERE username='"+username+"';"; 	//todo : vérifier mdp 
+			rs = statement.executeQuery(query);
+			while (rs.next()) {
+				int uid = rs.getInt("uid");
+				user.setUid(uid);
+				String account_type = rs.getString("account_type");
+				user.setAccountType(account_type);
+				/**
+				 * Crée la connexion
+				 */
+				ConnectionUser cu = new ConnectionUser(user);
+				System.out.println("Connected !");
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 }

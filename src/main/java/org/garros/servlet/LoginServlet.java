@@ -14,6 +14,7 @@ import org.garros.User;
 import org.garros.UserService;
 import org.garros.UserServiceImpl;
 import org.garros.ConnectionUser;
+import org.garros.DBManager;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -66,7 +67,7 @@ public class LoginServlet extends HttpServlet {
 		user.setUsername(username);
 		try {
 			statement = connection.createStatement();
-			String query = "SELECT * FROM users WHERE username='"+username+"';"; 	//todo : v�rifier mdp
+			String query = "SELECT * FROM users WHERE username='"+username+"';"; 	//todo : verifier mdp
 			rs = statement.executeQuery(query);
 			while (rs.next()) {
 				int uid = rs.getInt("uid");
@@ -74,7 +75,7 @@ public class LoginServlet extends HttpServlet {
 				String account_type = rs.getString("account_type");
 				user.setAccountType(account_type);
 				/**
-				 * Cr�e la connexion
+				 * Cree la connexion
 				 */
 				ConnectionUser cu = new ConnectionUser(user);
 				System.out.println("Connected !");

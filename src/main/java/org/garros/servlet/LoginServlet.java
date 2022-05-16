@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.garros.DBManager;
 import org.garros.Player;
 import org.garros.User;
 import org.garros.UserService;
@@ -43,23 +42,23 @@ public class LoginServlet extends HttpServlet {
 		}
 	}
 
-	//GET à /login -> affichage de login.jsp pour se connecter
+	// GET /login -> affichage de login.jsp pour se connecter
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
 	}
 
-	//POST à /login -> tentative de connexion
+	// POST /login -> tentative de connexion
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		// Accept user login info from the login page
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 
 		System.out.println(username);
 		System.out.println(password);
-		
+
 		Connection connection = DBManager.getInstance().getConnection();
 		Statement statement;
 		ResultSet rs;
@@ -67,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 		user.setUsername(username);
 		try {
 			statement = connection.createStatement();
-			String query = "SELECT * FROM users WHERE username='"+username+"';"; 	//todo : vérifier mdp 
+			String query = "SELECT * FROM users WHERE username='"+username+"';"; 	//todo : vï¿½rifier mdp
 			rs = statement.executeQuery(query);
 			while (rs.next()) {
 				int uid = rs.getInt("uid");
@@ -75,11 +74,11 @@ public class LoginServlet extends HttpServlet {
 				String account_type = rs.getString("account_type");
 				user.setAccountType(account_type);
 				/**
-				 * Crée la connexion
+				 * Crï¿½e la connexion
 				 */
 				ConnectionUser cu = new ConnectionUser(user);
 				System.out.println("Connected !");
-				
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

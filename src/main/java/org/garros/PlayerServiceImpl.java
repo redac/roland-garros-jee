@@ -15,4 +15,14 @@ public class PlayerServiceImpl implements PlayerService {
 		return playerDAO.findByName(searchText);
 	}
 
+	@Override
+	public List<Player> getPlayerByWin() {
+		return playerDAO.findByWin();
+	}
+
+	@Override
+	public List<Player> getPlayerByTime() {
+		return playerDAO.findByTime();
+	}
+
 }

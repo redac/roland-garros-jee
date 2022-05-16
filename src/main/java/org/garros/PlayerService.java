@@ -7,7 +7,7 @@ public interface PlayerService {
 
 	List<Player> getPlayerByName(String searchText);
 	
-	List<Player> getPlayerByWin();
+	List<Player> getPlayerByWin(String category);
 	
-	List<Player> getPlayerByTime();
+	List<Player> getPlayerByTime(String category);
 }

@@ -1,18 +1,12 @@
 package org.garros.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.garros.Player;
 import org.garros.User;
-import org.garros.UserService;
-import org.garros.UserServiceImpl;
 import org.garros.ConnectionUser;
 import org.garros.DBManager;
 
@@ -22,17 +16,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private UserService userService = new UserServiceImpl();
 
-	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
-
-		String pageName = "/login.jsp";
+	private void doProcess(HttpServletRequest request, HttpServletResponse response, String pageName) {
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);
@@ -46,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 	// GET /login -> affichage de login.jsp pour se connecter
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doProcess(req, resp);
+		doProcess(req, resp, "/login.jsp");
 	}
 
 	// POST /login -> tentative de connexion
@@ -67,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 		user.setUsername(username);
 		try {
 			statement = connection.createStatement();
-			String query = "SELECT * FROM users WHERE username='"+username+"';"; 	//todo : verifier mdp
+			String query = "SELECT * FROM users WHERE username='"+username+"' AND pwd='" + password + "';"; 	//todo : verifier mdp
 			rs = statement.executeQuery(query);
 			while (rs.next()) {
 				int uid = rs.getInt("uid");
@@ -77,8 +67,12 @@ public class LoginServlet extends HttpServlet {
 				/**
 				 * Cree la connexion
 				 */
-				ConnectionUser cu = new ConnectionUser(user);
+				ConnectionUser co = ConnectionUser.getInstance();
+				co.setUser(user);
+				co.setEtat("connected");
+				
 				System.out.println("Connected !");
+				doProcess(req, resp, "/index.jsp");
 
 			}
 		} catch (SQLException e) {
@@ -86,5 +80,8 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
+		// Si la connexion a echoué on remet la page de connexion
+		doProcess(req, resp, "/login.jsp");
+		
 	}
 }

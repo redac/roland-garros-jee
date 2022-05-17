@@ -41,8 +41,7 @@ public class MatchDAOImpl implements MatchDAO {
 	@Override
 	public List<Match> findByAll() {
 
-		return findByQuery(
-				"SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches;");
+		return findByQuery("SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches;");
 	}
 
 }

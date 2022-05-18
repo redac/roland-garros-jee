@@ -65,6 +65,13 @@ public class PlayerDAOImpl implements PlayerDAO {
 	}
 	
 	@Override
+	public List<Player> findById(int id) {
+
+		return findByQuery(
+				"SELECT * FROM players WHERE player_id='"+ id +"';");
+	}
+	
+	@Override
 	public List<Player> findByTime(String category) {
 
 		return findByQuery(

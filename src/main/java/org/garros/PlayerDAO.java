@@ -12,6 +12,8 @@ public interface PlayerDAO {
 
 	List<Player> findByTime(String category);
 
+	List<Player> findById(int id);
+
 	List<Player> findByQuery(String query);
 
 }

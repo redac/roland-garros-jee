@@ -58,7 +58,7 @@ public class Match {
 		this.date = date;
 	}
 	
-	public Match(int match_num, int date, int player2_id, int winner_id, int looser_id, int player1_id) {
+	public Match(int match_num, int date, int player1_id, int player2_id, int winner_id, int looser_id) {
 		this.match_num = match_num;
 		this.date = date ;
 		this.player1_id = player1_id;

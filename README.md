@@ -27,7 +27,6 @@ Liste de fonctionnalités :
   - [x] Une page qui affiche la liste des joueuses/joueurs triée par durée de jeu totale
   - [x] une page qui indique par catégorie (femme/homme) qui a gagné le plus de jeux, qui a perdu le moins de sets, qui a gagné le plus de matches. [optionnel]
 
-### Done ✓
 - [x] mettre un pied de page en bas de chaque page contenant un lien vers les CGU (reprendre les cgu actuelles).
 - [x] mettre un menu sur toutes les pages pour pouvoir accéder directement aux rubriques du site.
 - [x] mettre une page de Login.

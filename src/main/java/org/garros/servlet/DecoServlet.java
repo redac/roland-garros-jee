@@ -1,7 +1,8 @@
-
 package org.garros.servlet;
 
 import java.io.IOException;
+
+import org.garros.ConnectionUser;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,17 +10,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/home")
-public class HomeServlet extends HttpServlet {
+@WebServlet("/deco")
+public class DecoServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-
-	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
-
-		String pageName = "/index.jsp";
+	private void doProcess(HttpServletRequest request, HttpServletResponse response, String pageName) {
+		
+		// 1) Déconnexion
+		ConnectionUser.getInstance().setEtat("disconnected");
+		
+		// 2) redirection
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);
@@ -32,11 +34,12 @@ public class HomeServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doProcess(req, resp);
+		doProcess(req, resp, "/index.jsp");
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doProcess(req, resp);
+		doProcess(req, resp, "/index.jsp");
 	}
+	
 }

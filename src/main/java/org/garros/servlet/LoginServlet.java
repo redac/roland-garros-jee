@@ -81,7 +81,10 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		// Si la connexion a echoué on remet la page de connexion
-		doProcess(req, resp, "/login.jsp");
+		if(ConnectionUser.getInstance().getEtat() != "connected") {
+			doProcess(req, resp, "/login.jsp");
+		}
+		
 		
 	}
 }

@@ -89,7 +89,7 @@
 					<ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
 						aria-labelledby="dropdownDefault">
 						<li><a href="#"
-							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page 1</a>
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
 						</li>
 						<li><a href="#"
 							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page 2</a>
@@ -97,7 +97,7 @@
 						<li><a href="#"
 							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page 3</a>
 						</li>
-						<li><a href="#"
+						<li><a href="deco"
 							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
 								out</a></li>
 					</ul>

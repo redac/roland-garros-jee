@@ -8,7 +8,7 @@ package org.garros;
 public class ConnectionUser {
 
 	private static ConnectionUser instance = null; // instance de la classe
-	private User user; // utilsateur connectï¿½
+	private User user; // utilsateur connecté
 	private String etat = "disconnected"; // connected/disconnected
 
 	

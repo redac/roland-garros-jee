@@ -48,7 +48,8 @@ List<Player> listPlayersTimeWomen = (List<Player>) request.getAttribute("listPla
 		<!-- Top Nav -->
 		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
-		<div class="flex flex-col justify-center items-center bg-grey-lightest">
+		<div
+			class="flex flex-col justify-center items-center bg-grey-lightest">
 			<div class="container mx-auto px-4 sm:px-8">
 				<div class="py-8">
 					<div>
@@ -347,8 +348,8 @@ List<Player> listPlayersTimeWomen = (List<Player>) request.getAttribute("listPla
 				</div>
 			</div>
 		</div>
-			<!-- Footer -->
-	<jsp:include page='components/footer.jsp' />
+		<!-- Footer -->
+		<jsp:include page='components/footer.jsp' />
 	</div>
 
 </body>

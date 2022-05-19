@@ -10,8 +10,4 @@ public interface MatchService {
 	
 	List<Match> getMatchByNum(int match_num);
 
-	void modifyMatch(int idMatch, int date, int id1, int id2, int idWin, int idLose);
-	
-	void deleteMatch(int idMatch);
-
 }

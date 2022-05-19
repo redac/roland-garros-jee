@@ -5,13 +5,21 @@
 <!DOCTYPE html>
 <%
 List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers2");
+%>
 
+<%
 List<Player> listPlayersWinMen = (List<Player>) request.getAttribute("listPlayersWinMen");
+%>
 
+<%
 List<Player> listPlayersTimeMen = (List<Player>) request.getAttribute("listPlayersTimeMen");
+%>
 
+<%
 List<Player> listPlayersWinWomen = (List<Player>) request.getAttribute("listPlayersWinWomen");
+%>
 
+<%
 List<Player> listPlayersTimeWomen = (List<Player>) request.getAttribute("listPlayersTimeWomen");
 %>
 <html>

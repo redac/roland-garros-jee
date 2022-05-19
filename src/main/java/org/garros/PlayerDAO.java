@@ -18,10 +18,7 @@ public interface PlayerDAO {
 
 	void modifyPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname);
 
-	void createPlayer(int age, String category, String country, String firstname, String hand, String lastname,
-			int timePlayed, int nbWin, int ranking);
-
-	void createPlayer2(String firstname, String lastname, String hand, String category, String country);
+	void createPlayer(int age, String category, String country, String firstname, String hand, String lastname,int timePlayed, int nbWin, int ranking);
 
 	void deletePlayer(int id);
 }

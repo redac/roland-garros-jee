@@ -17,7 +17,5 @@ public interface MatchDAO {
 	void modifyScore(int idMatchScore, int idMatch, int numSet, int score1, int score2);
 
 	void modifyMatch(int idMatch, int date, int id1, int id2, int idWin, int idLose);
-	
-	void deleteMatch(int idMatch);
 
 }

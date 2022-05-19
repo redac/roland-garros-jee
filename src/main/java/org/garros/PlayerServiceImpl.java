@@ -36,10 +36,6 @@ public class PlayerServiceImpl implements PlayerService {
 	}
 
 	@Override
-	public void createPlayer2(String firstname, String lastname, String hand, String category, String country) {
-		playerDAO.createPlayer2(firstname, lastname, hand, category, country);
-	}
-
 	public void deletePlayer(int id) {
 		playerDAO.deletePlayer(id);
 	}

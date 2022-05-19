@@ -29,5 +29,10 @@ public class PlayerServiceImpl implements PlayerService {
 	public List<Player> getPlayerByTime(String category) {
 		return playerDAO.findByTime(category);
 	}
+	
+	@Override
+	public void putPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname) {
+		playerDAO.modifyPlayer(id, age, category, country, firstname, hand, lastname);
+	}
 
 }

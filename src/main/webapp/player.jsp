@@ -50,7 +50,8 @@ String hand = wantedPlayer.getHand();
 		</div>
 		<form
 			class="w-full max-w-xs bg-white flex flex-col py-5 px-8 rounded-lg shadow-lg"
-			action="">
+			action="PlayerModifyServlet"
+			method="post">
 
 			<label class="text-gray-700 font-bold py-2" for="">ID</label> <input
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"

@@ -23,9 +23,9 @@ public class ScoreDAOImpl implements ScoreDAO {
 				int player1_score = rs.getInt("player1_score");
 				int player2_score = rs.getInt("player2_score");
 				/**
-				 * Create a player object from the SQL result set
+				 * Create a score object from the SQL result set
 				 */
-				
+
 				Score score = new Score(matches_id, set_number, player1_score, player2_score);
 				scores.add(score);
 			}
@@ -40,15 +40,15 @@ public class ScoreDAOImpl implements ScoreDAO {
 	@Override
 	public List<Score> findByAll() {
 
-		return findByQuery(
-				"SELECT matches_id, set_number, player1_score, player2_score FROM matches_score ;");
+		return findByQuery("SELECT matches_id, set_number, player1_score, player2_score FROM matches_score ;");
 	}
-	
+
 	@Override
 	public List<Score> findByMatchAndSet(int match_num, int set_number) {
 
 		return findByQuery(
-				"SELECT matches_id, set_number, player1_score, player2_score FROM matches_score WHERE matches_id ='"+ match_num +"' AND set_number='"+ set_number +"';");
+				"SELECT matches_id, set_number, player1_score, player2_score FROM matches_score WHERE matches_id ='"
+						+ match_num + "' AND set_number='" + set_number + "';");
 	}
 
 }

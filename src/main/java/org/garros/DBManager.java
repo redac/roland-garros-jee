@@ -76,7 +76,7 @@ public class DBManager {
 	}
 
 	/**
-	 * permet de tester la connexion à la DB
+	 * Permet de tester la connexion à la DB
 	 * 
 	 * @param args
 	 */

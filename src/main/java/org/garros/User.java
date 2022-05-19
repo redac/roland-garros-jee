@@ -18,9 +18,9 @@ public class User {
 		this.accountType = accountType;
 		this.password = password;
 	}
-	
+
 	public User() {
-		
+
 	}
 
 	public int getUid() {
@@ -54,7 +54,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public void aff() {
 		System.out.println(this.username);
 	}

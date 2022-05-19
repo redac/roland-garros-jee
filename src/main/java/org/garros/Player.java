@@ -75,26 +75,26 @@ public class Player {
 	public void setRanking(int ranking) {
 		this.ranking = ranking;
 	}
-	
+
 	public int getNbWin() {
 		return nb_win;
 	}
-	
+
 	public void setNbWin(int nb_win) {
 		this.nb_win = nb_win;
 	}
-	
+
 	public int getNbTimePlayed() {
 		return nb_timePlayed;
 	}
-	
+
 	public void setNbTimePlayed(int nb_timePlayed) {
 		this.nb_timePlayed = nb_timePlayed;
 	}
 
-
 	/**
 	 * Player object constructor
+	 * 
 	 * @param id
 	 * @param firstname
 	 * @param lastname
@@ -117,13 +117,12 @@ public class Player {
 		this.nb_win = nb_win;
 		this.nb_timePlayed = nb_timePlayed;
 	}
-	
+
 	public Player() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Player(String firstname, String lastname, String category, String country,
-			String hand) {
+	public Player(String firstname, String lastname, String category, String country, String hand) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.category = category;

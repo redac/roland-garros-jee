@@ -26,7 +26,7 @@ public class MatchDAOImpl implements MatchDAO {
 				int winner_id = rs.getInt("winner_id");
 				int looser_id = rs.getInt("looser_id");
 				/**
-				 * Create a player object from the SQL result set
+				 * Create a match object from the SQL result set
 				 */
 				Match match = new Match(match_num, date, player1_id, player2_id, winner_id, looser_id);
 				matchs.add(match);
@@ -57,11 +57,13 @@ public class MatchDAOImpl implements MatchDAO {
 
 		return findByQuery("SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches ;");
 	}
-	
+
 	@Override
 	public List<Match> findByNum(int match_num) {
 
-		return findByQuery("SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches WHERE category='" + match_num + "' ;");
+		return findByQuery(
+				"SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches WHERE category='"
+						+ match_num + "' ;");
 	}
 
 	@Override

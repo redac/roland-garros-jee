@@ -151,13 +151,24 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 							</table>
 						</div>
 					</div>
+					<!-- Vérification connection -->
+					<%
+					Object connecte = session.getAttribute("connecte");
+
+					if (connecte != null) {
+						User user = (User) session.getAttribute("connected_user");
+						user.aff();
+					%>
 					<div class="flex justify-between items-center my-4">
 						<form action="playeradd.jsp">
 							<button
 								class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
-								Add player</button>
+								New player</button>
 						</form>
 					</div>
+					<%
+					}
+					%>
 				</div>
 			</div>
 		</div>

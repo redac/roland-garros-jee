@@ -87,5 +87,10 @@ public class MatchDAOImpl implements MatchDAO {
 		doQuery("UPDATE matches" + "set date=" + date + "set player1_id=" + id1 + "set player2_id=" + id2
 				+ "set winner_id=" + idWin + "set looser_id=" + idLose + "WHERE match_num=" + idMatch);
 	}
+	
+	@Override
+	public void deleteMatch(int idMatch) {
+		doQuery("DELETE from matches WHERE match_num=" + idMatch);
+	}
 
 }

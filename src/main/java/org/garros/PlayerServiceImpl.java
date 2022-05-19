@@ -35,4 +35,9 @@ public class PlayerServiceImpl implements PlayerService {
 		playerDAO.modifyPlayer(id, age, category, country, firstname, hand, lastname);
 	}
 
+	@Override
+	public void createPlayer2(String firstname, String lastname, String hand, String category, String country) {
+		playerDAO.createPlayer2(firstname, lastname, hand, category, country);
+	}
+
 }

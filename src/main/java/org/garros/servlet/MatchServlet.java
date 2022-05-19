@@ -38,8 +38,6 @@ public class MatchServlet extends HttpServlet{
 
 		Match match = new Match();
 		match = (Match) matchService.getMatchByNum(match_num).get(0);
-		
-		
 
 		req.setAttribute("match", match);
 		doProcess(req, resp);
@@ -50,4 +48,5 @@ public class MatchServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 	}
+	
 }

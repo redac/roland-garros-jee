@@ -1,4 +1,4 @@
-# Roland-Garros JEE Website
+# Roland-Garros JEE
 
 Liste de fonctionnalités : 
 

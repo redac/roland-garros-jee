@@ -17,4 +17,6 @@ public interface PlayerService {
 
 	void createPlayer2(String firstname, String lastname, String hand, String category, String country);
 
+	
+	void deletePlayer(int id);
 }

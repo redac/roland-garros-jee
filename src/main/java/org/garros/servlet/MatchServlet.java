@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/match")
-public class MatchServlet extends HttpServlet{
+public class MatchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MatchService matchService = new MatchServiceImpl();
 
@@ -32,7 +32,6 @@ public class MatchServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-				
 
 		int match_num = Integer.parseInt(req.getParameter("match_num"));
 
@@ -41,12 +40,12 @@ public class MatchServlet extends HttpServlet{
 
 		req.setAttribute("match", match);
 		doProcess(req, resp);
-		
+
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 	}
 	
 }

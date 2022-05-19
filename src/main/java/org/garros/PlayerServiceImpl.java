@@ -40,4 +40,7 @@ public class PlayerServiceImpl implements PlayerService {
 		playerDAO.createPlayer2(firstname, lastname, hand, category, country);
 	}
 
+	public void deletePlayer(int id) {
+		playerDAO.deletePlayer(id);
+	}
 }

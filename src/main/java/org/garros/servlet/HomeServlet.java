@@ -15,7 +15,6 @@ public class HomeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
 		String pageName = "/index.jsp";

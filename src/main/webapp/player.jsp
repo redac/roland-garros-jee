@@ -50,8 +50,7 @@ String hand = wantedPlayer.getHand();
 		</div>
 		<form
 			class="w-full max-w-xs bg-white flex flex-col py-5 px-8 rounded-lg shadow-lg"
-			action="PlayerModifyServlet"
-			method="post">
+			action="PlayerModifyServlet" method="post">
 
 			<label class="text-gray-700 font-bold py-2" for="">ID</label> <input
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
@@ -82,15 +81,17 @@ String hand = wantedPlayer.getHand();
 				<button
 					class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
 					Modify</button>
-				<button href="login"
-					class="bg-rolandorange hover:bg-orange-900 text-white font-bold rounded py-2 px-4">
-					Delete</button>
+				<form method="POST" action="PlayerDeleteServlet">
+					<button href="login"
+						class="bg-rolandorange hover:bg-orange-900 text-white font-bold rounded py-2 px-4">
+						Delete</button>
+				</form>
+
 			</div>
 
 		</form>
 	</div>
 	<!-- Footer -->
 	<jsp:include page='components/footer.jsp' />
-	</div>
 </body>
 </html>

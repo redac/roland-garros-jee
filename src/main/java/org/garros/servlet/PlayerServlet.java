@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 
 @WebServlet("/player")
-public class PlayerServlet extends HttpServlet{
+public class PlayerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService = new PlayerServiceImpl();
 
@@ -39,19 +39,18 @@ public class PlayerServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-				
-		// D'abord on récupère l'id du joueur dont on veut la fiche		
+
+		// D'abord on recupere l'id du joueur dont on veut la fiche
 		int id = Integer.parseInt(req.getParameter("id"));
-		
-		// Puis on fait la requete pour récupérer tout ce dont on a besoin
+
+		// Puis on fait la requete pour recuperer tout ce dont on a besoin
 		Player player = new Player();
 		player = (Player) playerService.getPlayerById(id).get(0);
-		
-		
-		// Enfin on affiche le résultat en fonction du Player
+
+		// Enfin on affiche le resultat en fonction du Player
 		req.setAttribute("player", player);
 		doProcess(req, resp);
-		
+
 	}
-	
+
 }

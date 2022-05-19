@@ -19,20 +19,19 @@ import org.garros.PlayerServiceImpl;
 public class PlayerModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService = new PlayerServiceImpl();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PlayerModifyServlet() {
-        super();
-    }
-    
-    protected void doProcess(HttpServletRequest req, HttpServletResponse res,String pagename) throws ServletException, IOException {
-    	
-    	
-    }
-	
-	
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public PlayerModifyServlet() {
+		super();
+	}
+
+	protected void doProcess(HttpServletRequest req, HttpServletResponse res, String pagename)
+			throws ServletException, IOException {
+
+	}
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String pageName = "/players";
 		int id = Integer.parseInt(req.getParameter("id"));

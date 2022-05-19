@@ -29,10 +29,10 @@ public class StatsServlet extends HttpServlet {
 		String categoryWomen = "Women";
 		List<Player> playersWin = new ArrayList<Player>();
 		List<Player> playersTime = new ArrayList<Player>();
-		
-		playersWin=playerService2.getPlayerByWin();
-		playersTime=playerService2.getPlayerByTime();
-		
+
+		playersWin = playerService2.getPlayerByWin();
+		playersTime = playerService2.getPlayerByTime();
+
 		List<Player> playersWinMen = new ArrayList<Player>();
 		List<Player> playersWinWomen = new ArrayList<Player>();
 		List<Player> playersTimeMen = new ArrayList<Player>();
@@ -47,23 +47,22 @@ public class StatsServlet extends HttpServlet {
 		}
 		searchHistory.add(searchText);
 
-		for(Player playerwin : playersWin) {
-			if(playerwin.getCategory().equals(categoryMen)) {
+		for (Player playerwin : playersWin) {
+			if (playerwin.getCategory().equals(categoryMen)) {
 				playersWinMen.add(playerwin);
 			}
-			if(playerwin.getCategory().equals(categoryWomen)) {
+			if (playerwin.getCategory().equals(categoryWomen)) {
 				playersWinWomen.add(playerwin);
 			}
 		}
-		for(Player playertime : playersTime) {
-			if(playertime.getCategory().equals(categoryMen)) {
+		for (Player playertime : playersTime) {
+			if (playertime.getCategory().equals(categoryMen)) {
 				playersTimeMen.add(playertime);
 			}
-			if(playertime.getCategory().equals(categoryWomen)) {
+			if (playertime.getCategory().equals(categoryWomen)) {
 				playersTimeWomen.add(playertime);
 			}
 		}
-		
 
 		request.setAttribute("listPlayersWinMen", playersWinMen);
 		request.setAttribute("listPlayersWinWomen", playersWinWomen);

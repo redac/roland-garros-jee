@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 
 @WebServlet("/addplayer")
-public class PlayerAddServlet extends HttpServlet{
+public class PlayerAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService = new PlayerServiceImpl();
 
@@ -37,18 +37,17 @@ public class PlayerAddServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		// D'abord on r�cup�re les paramètres
+
+		// D'abord on recupere les paramètres
 		String firstname = req.getParameter("firstname");
 		String lastname = req.getParameter("lastname");
 		String hand = req.getParameter("hand");
 		String categorie = req.getParameter("categorie");
 		String country = req.getParameter("country");
-		
-		//Player player = new Player(firstname, lastname, hand, categorie, country);
+
 		playerService.createPlayer2(firstname, lastname, hand, categorie, country);
 		doProcess(req, resp);
-		
+
 	}
-	
+
 }

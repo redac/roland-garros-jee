@@ -76,17 +76,15 @@ public class LoginServlet extends HttpServlet {
 
 		// connection
 		if (connected) {
-			/* Récupération de la session depuis la requête */
+			/* RÃ©cupÃ©ration de la session depuis la requete */
 			HttpSession session = req.getSession();
 
 			/* Sauvegarde de la connexion */
 			session.setAttribute("connecte", true);
 			session.setAttribute("connected_user", user);
-
-			System.out.println("Connected !");
 			doProcess(req, resp, "/index.jsp");
 		} else {
-			// Si la connexion a échoué on remet la page de connexion
+			// Si la connexion a Ã©chouÃ© on remet la page de connexion
 			doProcess(req, resp, "/login.jsp");
 		}
 	}

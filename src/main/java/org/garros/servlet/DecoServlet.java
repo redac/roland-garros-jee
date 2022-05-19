@@ -16,10 +16,10 @@ public class DecoServlet extends HttpServlet {
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response, String pageName) {
 
-		// 1) Déconnexion
+		// 1) DÃ©connexion
 		request.getSession().invalidate();
 
-		// 2) redirection
+		// 2) Redirection
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);

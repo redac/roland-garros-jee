@@ -11,7 +11,7 @@ public class MatchDAOImpl implements MatchDAO {
 
 	public List<Match> findByQuery(String query) {
 		Connection connection = DBManager.getInstance().getConnection();
-		List<Match> match = new ArrayList<Match>();
+		List<Match> matchs = new ArrayList<Match>();
 		Statement statement;
 		ResultSet rs;
 		try {
@@ -25,23 +25,25 @@ public class MatchDAOImpl implements MatchDAO {
 				int winner_id = rs.getInt("winner_id");
 				int looser_id = rs.getInt("looser_id");
 				/**
-				 * Create the a player object from the SQL result set
+				 * Create a player object from the SQL result set
 				 */
-				Match matchs = new Match(match_num, date, player1_id, player2_id, winner_id, looser_id);
-				match.add(matchs);
+				Match match = new Match(match_num, date, player1_id, player2_id, winner_id, looser_id);
+				matchs.add(match);
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return match;
+		return matchs;
 	}
 
 	@Override
 	public List<Match> findByAll() {
 
-		return findByQuery("SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches;");
+		return findByQuery(
+				"SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches ;");
 	}
 
 }

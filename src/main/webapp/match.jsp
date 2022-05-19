@@ -6,6 +6,27 @@
 <%
 List<Match> listMatch = (List<Match>) request.getAttribute("listMatch");
 %>
+
+<%
+List<Player> listPlayer1 = (List<Player>) request.getAttribute("listPlayer1");
+%>
+<%
+List<Player> listPlayer2 = (List<Player>) request.getAttribute("listPlayer2");
+%>
+<%
+List<Player> listWinner = (List<Player>) request.getAttribute("listWinner");
+%>
+<%
+List<Player> listLooser = (List<Player>) request.getAttribute("listLooser");
+%>
+<%
+List<Score> listScoreSet1 = (List<Score>) request.getAttribute("listScoreSet1");
+%>
+
+<%
+List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
+%>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -59,18 +80,67 @@ List<Match> listMatch = (List<Match>) request.getAttribute("listMatch");
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
 											date</th>
+										<th
+											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+											player1_score1</th>
+										<th
+											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+											player2_score1</th>
+										<th
+											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+											player1_score2</th>
+										<th
+											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+											player2_score2</th>
 										<th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<%
+									int numPlayer = 0;
+									int numWinnerLooser = 0;
+									int numMatch = 0;
 									for (Match match : listMatch) {
 										int match_num = match.getMatchNum();
-										int player1_id = match.getPlayer1Id();
-										int player2_id = match.getPlayer2Id();
 										int winner_id = match.getWinnerId();
 										int looser_id = match.getLooserId();
 										int date = match.getDate();
+
+										Player player1 = listPlayer1.get(numPlayer);
+										String firstname1 = player1.getFirstname();
+										String lastname1 = player1.getLastname();
+										int age1 = player1.getAge();
+										String category1 = player1.getCategory();
+										String country1 = player1.getCountry();
+										int ranking1 = player1.getRanking();
+
+										Player player2 = listPlayer2.get(numPlayer);
+										String firstname2 = player2.getFirstname();
+										String lastname2 = player2.getLastname();
+										int age2 = player2.getAge();
+										String category2 = player2.getCategory();
+										String country2 = player2.getCountry();
+										int ranking2 = player2.getRanking();
+
+										Player winner = listWinner.get(numWinnerLooser);
+										String firstnameWinner = winner.getFirstname();
+										String lastnameWinner = winner.getLastname();
+
+										Player looser = listLooser.get(numWinnerLooser);
+										String firstnameLooser = looser.getFirstname();
+										String lastnameLooser = looser.getLastname();
+
+										Score scoreSet1 = listScoreSet1.get(numMatch);
+										int player1_score1 = scoreSet1.getPlayer1Score();
+										int player2_score1 = scoreSet1.getPlayer2Score();
+
+										Score scoreSet2 = listScoreSet2.get(numMatch);
+										int player1_score2 = scoreSet2.getPlayer1Score();
+										int player2_score2 = scoreSet2.getPlayer2Score();
+
+										numPlayer = numPlayer + 1;
+										numWinnerLooser = numWinnerLooser + 1;
+										numMatch = numMatch + 1;
 									%>
 									<tr>
 										<td
@@ -88,19 +158,36 @@ List<Match> listMatch = (List<Match>) request.getAttribute("listMatch");
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap"><%=player1_id%></p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=firstname1%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap"><%=player2_id%></p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=firstname2%></p>
 										</td>
-																				<td
+										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap"><%=winner_id%></p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=firstnameWinner%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 											<p class="text-gray-900 whitespace-no-wrap"><%=date%></p>
+										</td>
+										<td
+											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="text-gray-900 whitespace-no-wrap"><%=player1_score1%></p>
+										</td>
+										<td
+											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="text-gray-900 whitespace-no-wrap"><%=player2_score1%></p>
+										</td>
+										</td>
+										<td
+											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="text-gray-900 whitespace-no-wrap"><%=player1_score2%></p>
+										</td>
+										<td
+											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="text-gray-900 whitespace-no-wrap"><%=player2_score2%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right">
@@ -117,6 +204,7 @@ List<Match> listMatch = (List<Match>) request.getAttribute("listMatch");
 									<%
 									}
 									%>
+
 								</tbody>
 							</table>
 						</div>

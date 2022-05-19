@@ -57,6 +57,15 @@ public class PlayerServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		// D'abord on récupère les paramètres
+		String firstname = req.getParameter("firstname");
+		String lastname = req.getParameter("lastname");
+		String hand = req.getParameter("hand");
+		String categorie = req.getParameter("categorie");
+		String country = req.getParameter("country");
+		
+		Player player = new Player(firstname, lastname, hand, categorie, country);
+		//playerService.createplayer2(player);
 		
 	}
 }

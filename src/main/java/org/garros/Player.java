@@ -122,4 +122,12 @@ public class Player {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Player(String firstname, String lastname, String category, String country,
+			String hand) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.category = category;
+		this.country = country;
+		this.hand = hand;
+	}
 }

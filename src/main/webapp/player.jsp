@@ -79,16 +79,9 @@ String hand = wantedPlayer.getHand();
 				type="text" name="country" value="<%=country%>">
 			<div class="flex justify-between items-center my-4">
 				<button
-					class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
+					class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded m-4 py-2 px-4">
 					Modify</button>
-				<form method="POST" action="PlayerDeleteServlet">
-					<button href="login"
-						class="bg-rolandorange hover:bg-orange-900 text-white font-bold rounded py-2 px-4">
-						Delete</button>
-				</form>
-
 			</div>
-
 		</form>
 	</div>
 	<!-- Footer -->

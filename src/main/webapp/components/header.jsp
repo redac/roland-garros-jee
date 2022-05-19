@@ -59,7 +59,7 @@
 			<div class="items-center hidden sm:flex">
 				<a href="PlayerList"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Players</a>
-				<a href="#" class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
+				<a href="MatchList" class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
 
 				<!-- Vérification connection -->
 				<%

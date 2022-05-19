@@ -117,5 +117,9 @@ public class Player {
 		this.nb_win = nb_win;
 		this.nb_timePlayed = nb_timePlayed;
 	}
+	
+	public Player() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

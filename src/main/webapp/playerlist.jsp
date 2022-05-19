@@ -24,7 +24,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 		}
 	}
 </script>
-<title>PLAYERS — Roland-Garros</title>
+<title>Players — Roland-Garros</title>
 </head>
 <body>
 	<div

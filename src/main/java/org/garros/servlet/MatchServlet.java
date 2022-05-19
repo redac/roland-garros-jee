@@ -50,7 +50,7 @@ public class MatchServlet extends HttpServlet{
 		
 		
 
-		req.setAttribute("matche", match);
+		req.setAttribute("match", match);
 		doProcess(req, resp);
 		
 	}

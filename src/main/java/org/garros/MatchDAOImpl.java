@@ -30,7 +30,7 @@ public class MatchDAOImpl implements MatchDAO {
 				 */
 				Match match = new Match(match_num, date, player1_id, player2_id, winner_id, looser_id);
 				matchs.add(match);
-				
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -40,11 +40,46 @@ public class MatchDAOImpl implements MatchDAO {
 		return matchs;
 	}
 
+	public void doQuery(String query) {
+		Connection connection = DBManager.getInstance().getConnection();
+		Statement statement;
+		try {
+			statement = connection.createStatement();
+			statement.executeQuery(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	@Override
 	public List<Match> findByAll() {
 
-		return findByQuery(
-				"SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches ;");
+		return findByQuery("SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches ;");
+	}
+
+	@Override
+	public void createMatch(int date, int id1, int id2, int idWin, int idLose) {
+		doQuery("INSERT into matches (date, player1_id, player2_id, winner_id, looser_id) VALUES (" + date + "," + id1
+				+ "," + id2 + "," + idWin + "," + idLose + ")");
+	}
+
+	@Override
+	public void createScore(int idMatch, int numSet, int score1, int score2) {
+		doQuery("INSERT into matches_score (matches_id, set_number, player1_score, player2_score) VALUES (" + idMatch
+				+ "," + numSet + "," + score1 + "," + score2 + ")");
+	}
+
+	@Override
+	public void modifyScore(int idMatchScore, int idMatch, int numSet, int score1, int score2) {
+		doQuery("UPDATE matches_score" + "set matches_id=" + idMatch + "set set_number=" + numSet + "set player1_score"
+				+ score1 + "set player2_score" + score2 + "WHERE idmatches_score=" + idMatchScore);
+	}
+
+	@Override
+	public void modifyMatch(int idMatch, int date, int id1, int id2, int idWin, int idLose) {
+		doQuery("UPDATE matches" + "set date=" + date + "set player1_id=" + id1 + "set player2_id=" + id2
+				+ "set winner_id=" + idWin + "set looser_id=" + idLose + "WHERE match_num=" + idMatch);
 	}
 
 }

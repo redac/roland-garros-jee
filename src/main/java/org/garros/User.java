@@ -54,5 +54,9 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public void aff() {
+		System.out.println(this.username);
+	}
 
 }

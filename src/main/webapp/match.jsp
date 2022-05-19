@@ -45,7 +45,7 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 		}
 	}
 </script>
-<title>PLAYERS — Roland-Garros</title>
+<title>MATCHES — Roland-Garros</title>
 </head>
 <body>
 	<div
@@ -67,19 +67,16 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 									<tr>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											Numero de match</th>
+											n° match</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											Id player1</th>
+											Players</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											Id player2</th>
+											Winner</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											winner_id</th>
-										<th
-											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											date</th>
+											Date</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
 											player1_score1</th>
@@ -158,10 +155,8 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap"><%=firstname1%></p>
-										</td>
-										<td
-											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="text-gray-900 whitespace-no-wrap"><%=firstname1%>/
+											</p>
 											<p class="text-gray-900 whitespace-no-wrap"><%=firstname2%></p>
 										</td>
 										<td
@@ -214,6 +209,7 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 		</div>
 	</div>
 	<!-- Footer -->
+	<div>
 	<jsp:include page='components/footer.jsp' />
 	</div>
 </body>

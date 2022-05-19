@@ -127,7 +127,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 		                    							</svg>
 												</button>
 										</a> <!-- Bouton pour supprimer un joueur --> <a
-											href="/PlayerDeleteServlet">
+											href="PlayerDeleteServlet?id=<%=id%>">
 												<button type="submit"
 													class="inline-block hover:text-rolandorange">
 													<svg class="inline-block h-6 w-6" viewBox="0 0 24 24"

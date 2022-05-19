@@ -35,4 +35,8 @@ public class PlayerServiceImpl implements PlayerService {
 		playerDAO.modifyPlayer(id, age, category, country, firstname, hand, lastname);
 	}
 
+	@Override
+	public void deletePlayer(int id) {
+		playerDAO.deletePlayer(id);
+	}
 }

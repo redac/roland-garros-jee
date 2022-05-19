@@ -47,9 +47,6 @@ public class LoginServlet extends HttpServlet {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 
-		System.out.println(username);
-		System.out.println(password);
-
 		// Connexion a la db
 		Connection connection = DBManager.getInstance().getConnection();
 		Statement statement;
@@ -57,13 +54,13 @@ public class LoginServlet extends HttpServlet {
 		User user = new User();
 		user.setUsername(username);
 		boolean connected = false;
-		
+
 		try {
 			statement = connection.createStatement();
-			String query = "SELECT * FROM users WHERE username='"+username+"' AND pwd='" + password + "';"; 	//todo : verifier mdp
+			String query = "SELECT * FROM users WHERE username='" + username + "' AND pwd='" + password + "';";
 			rs = statement.executeQuery(query);
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				connected = true;
 				System.out.println("connecteeed");
 				int uid = rs.getInt("uid");
@@ -71,25 +68,25 @@ public class LoginServlet extends HttpServlet {
 				String account_type = rs.getString("account_type");
 				user.setAccountType(account_type);
 			}
-		
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		// connection
-		if(connected) {
+		if (connected) {
 			/* Récupération de la session depuis la requête */
-		    HttpSession session = req.getSession();
-		        
-		    /* Sauvegarde de la connexion */
-		    session.setAttribute("connecte", true);
-		    session.setAttribute( "connected_user", user);
-		             
+			HttpSession session = req.getSession();
+
+			/* Sauvegarde de la connexion */
+			session.setAttribute("connecte", true);
+			session.setAttribute("connected_user", user);
+
 			System.out.println("Connected !");
 			doProcess(req, resp, "/index.jsp");
 		} else {
-			// Si la connexion a echoué on remet la page de connexion
+			// Si la connexion a échoué on remet la page de connexion
 			doProcess(req, resp, "/login.jsp");
 		}
 	}

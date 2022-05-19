@@ -20,4 +20,5 @@ public interface PlayerDAO {
 
 	void createPlayer(int age, String category, String country, String firstname, String hand, String lastname,int timePlayed, int nbWin, int ranking);
 
+	void deletePlayer(int id);
 }

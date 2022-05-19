@@ -14,4 +14,6 @@ public interface PlayerService {
 	List<Player> getPlayerByTime(String category);
 	
 	void putPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname);
+	
+	void deletePlayer(int id);
 }

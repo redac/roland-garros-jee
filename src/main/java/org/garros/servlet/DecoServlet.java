@@ -15,10 +15,10 @@ public class DecoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response, String pageName) {
-		
+
 		// 1) Déconnexion
 		request.getSession().invalidate();
-		
+
 		// 2) redirection
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
@@ -39,5 +39,5 @@ public class DecoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp, "/index.jsp");
 	}
-	
+
 }

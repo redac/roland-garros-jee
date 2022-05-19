@@ -44,19 +44,19 @@ public class StatsServlet extends HttpServlet {
 			players2 = playerService2.getPlayerByName(searchText);
 		}
 		request.setAttribute("listPlayers2", players2);
-		
+
 		List<Player> playersWinMen = new ArrayList<Player>();
 		playersWinMen = playerService2.getPlayerByWin(categoryMen);
 		request.setAttribute("listPlayersWinMen", playersWinMen);
-		
+
 		List<Player> playersWinWomen = new ArrayList<Player>();
 		playersWinWomen = playerService2.getPlayerByWin(categoryWomen);
 		request.setAttribute("listPlayersWinWomen", playersWinWomen);
-		
+
 		List<Player> playersTimeMen = new ArrayList<Player>();
 		playersTimeMen = playerService2.getPlayerByTime(categoryMen);
 		request.setAttribute("listPlayersTimeMen", playersTimeMen);
-		
+
 		List<Player> playersTimeWomen = new ArrayList<Player>();
 		playersTimeWomen = playerService2.getPlayerByTime(categoryWomen);
 		request.setAttribute("listPlayersTimeWomen", playersTimeWomen);

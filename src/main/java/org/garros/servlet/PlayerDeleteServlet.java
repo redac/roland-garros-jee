@@ -3,46 +3,45 @@ package org.garros.servlet;
 import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 
+import org.garros.PlayerService;
+import org.garros.PlayerServiceImpl;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import org.garros.PlayerService;
-import org.garros.PlayerServiceImpl;
-
 /**
- * Servlet implementation class PlayerModifyServlet
+ * Servlet implementation class PlayerDeleteServlet
  */
-@WebServlet("/PlayerModifyServlet")
-public class PlayerModifyServlet extends HttpServlet {
+@WebServlet("/PlayerDeleteServlet")
+public class PlayerDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService = new PlayerServiceImpl();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PlayerModifyServlet() {
-        super();
-    }
-    
-    protected void doProcess(HttpServletRequest req, HttpServletResponse res,String pagename) throws ServletException, IOException {
-    	
-    	
-    }
-	
-	
+
+	public PlayerDeleteServlet() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String pageName = "/players";
+		int id = Integer.parseInt(req.getParameter("id"));
+		playerService.deletePlayer(id);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
+		try {
+			rd.forward(req, res);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String pageName = "/players";
 		int id = Integer.parseInt(req.getParameter("id"));
-		int age = Integer.parseInt(req.getParameter("age"));
-		String country = req.getParameter("country");
-		String firstname = req.getParameter("firstname");
-		String lastname = req.getParameter("lastname");
-		String hand = req.getParameter("hand");
-		String category = req.getParameter("category");
-		playerService.putPlayer(id, age, category, country, firstname, hand, lastname);
+		playerService.deletePlayer(id);
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(req, res);

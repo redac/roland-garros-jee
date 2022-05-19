@@ -110,4 +110,9 @@ public class PlayerDAOImpl implements PlayerDAO {
 				+ "VALUES (" + age + ",'" + category + "','" + country + "','" + firstname + "','" + hand + "','"
 				+ lastname + "," + timePlayed + "," + nbWin + "," + ranking + ")");
 	}
+	
+	@Override
+	public void deletePlayer(int id) {
+		doQuery("DELETE FROM players WHERE player_id=" + id);
+	}
 }

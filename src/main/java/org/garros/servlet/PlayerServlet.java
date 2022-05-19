@@ -65,7 +65,7 @@ public class PlayerServlet extends HttpServlet{
 		String country = req.getParameter("country");
 		
 		Player player = new Player(firstname, lastname, hand, categorie, country);
-		//playerService.createplayer2(player);
+
 		
 	}
 	

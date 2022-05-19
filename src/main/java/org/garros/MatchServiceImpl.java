@@ -14,5 +14,9 @@ public class MatchServiceImpl implements MatchService {
 	public List<Match> getMatchByQuery(String query) {
 		return matchDAO.findByQuery(query);
 	}
+	
+	public List<Match> getMatchByNum(int match_num) {
+		return matchDAO.findByNum(match_num);
+	}
 
 }

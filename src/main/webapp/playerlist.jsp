@@ -172,9 +172,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Footer -->
-	<div>
+		<!-- Footer -->
 		<jsp:include page='components/footer.jsp' />
 	</div>
 </body>

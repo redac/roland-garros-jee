@@ -83,8 +83,8 @@ String hand = wantedPlayer.getHand();
 					Modify</button>
 			</div>
 		</form>
+		<!-- Footer -->
+		<jsp:include page='components/footer.jsp' />
 	</div>
-	<!-- Footer -->
-	<jsp:include page='components/footer.jsp' />
 </body>
 </html>

@@ -48,7 +48,8 @@
 </script>
 </head>
 <!-- Top Nav -->
-<div class="font-sans w-full bg-white sticky top-0 shadow z-1">
+<div
+	class="font-sans w-full bg-white opacity-100 sticky top-0 shadow z-1">
 	<form class="container mx-auto">
 		<div class="w-full flex justify-between items-center py-4 px-8">
 			<!-- Brand -->
@@ -88,9 +89,11 @@
 					<ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
 						aria-labelledby="dropdownDefault">
 						<li><a href="playeradd.jsp"
-							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Add player</a></li>
+							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Add
+								player</a></li>
 						<li><a href="#"
-							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Add match</a></li>
+							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Add
+								match</a></li>
 						<li><a href="deco"
 							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Sign
 								out</a></li>

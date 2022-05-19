@@ -104,7 +104,7 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 										int match_num = match.getMatchNum();
 										int winner_id = match.getWinnerId();
 										int looser_id = match.getLooserId();
-										int date = match.getDate();
+										Date date = match.getDate();
 
 										Player player1 = listPlayer1.get(numPlayer);
 										String firstname1 = player1.getFirstname();

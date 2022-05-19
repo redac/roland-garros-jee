@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MatchDAOImpl implements MatchDAO {
@@ -19,7 +20,7 @@ public class MatchDAOImpl implements MatchDAO {
 			rs = statement.executeQuery(query);
 			while (rs.next()) {
 				int match_num = rs.getInt("match_num");
-				int date = rs.getInt("date");
+				Date date = rs.getDate("date");
 				int player1_id = rs.getInt("player1_id");
 				int player2_id = rs.getInt("player2_id");
 				int winner_id = rs.getInt("winner_id");

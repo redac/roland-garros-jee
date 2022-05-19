@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Match {
 	private int match_num;
-	private int date;
+	private Date date;
 	private int player1_id;
 	private int player2_id;
 	private int winner_id;
@@ -50,15 +50,15 @@ public class Match {
 		this.looser_id = looser_id;
 	}
 	
-	public int getDate() {
+	public Date getDate() {
 		return date;
 	}
 	
-	public void setDate(int date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	
-	public Match(int match_num, int date, int player1_id, int player2_id, int winner_id, int looser_id) {
+	public Match(int match_num, Date date, int player1_id, int player2_id, int winner_id, int looser_id) {
 		this.match_num = match_num;
 		this.date = date ;
 		this.player1_id = player1_id;

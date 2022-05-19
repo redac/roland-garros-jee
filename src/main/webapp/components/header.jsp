@@ -57,20 +57,39 @@
 						decoration-rolandorange font-bold">Roland-Garros</a>
 			<!-- Navigation -->
 			<div class="items-center hidden sm:flex">
-				<a href="PlayerList"
-					class="hover:roland-orange no-underline mx-2 px-2 py-2">Players</a>
-				<a href="MatchList" class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
-
-				<!-- Vérification connection -->
+				<!-- connection -->
 				<%
 				Object connecte = session.getAttribute("connecte");
-				
-				if (connecte != null){
-					User user = (User)session.getAttribute("connected_user");
+				%>
+				<a href="PlayerList"
+					class="hover:roland-orange no-underline mx-2 px-2 py-2">Players</a>
+				<!-- Connected -->
+				<%	
+				if (connecte != null) {
+					User user = (User) session.getAttribute("connected_user");
 					user.aff();
-					%>
-					<!-- Connecte -->
-					<button id="dropdownDefault" data-dropdown-toggle="dropdown"
+				%>
+				<a href="stats"
+					class="hover:roland-orange no-underline mx-2 px-2 py-2">Stats</a>
+				<%
+				} else {
+				%>
+				<!-- not connected -->
+					<a href="login"
+							class="hover:roland-orange no-underline mx-2 px-2 py-2">Stats</a>
+				<%
+				}
+				%>
+				<a href="MatchList"
+					class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
+
+				<!-- Connected -->
+				<%
+				if (connecte != null) {
+					User user = (User) session.getAttribute("connected_user");
+					user.aff();
+				%>
+				<button id="dropdownDefault" data-dropdown-toggle="dropdown"
 					class="text-white bg-green-700 hover:bg-green-900 focus:outline-none font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
 					type="button">
 					<%=user.getUsername()%>
@@ -78,34 +97,34 @@
 						viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 						<path stroke-linecap="round" stroke-linejoin="round"
 							stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-					</button>
-					<!-- Dropdown menu -->
-					<div id="dropdown"
-						class="hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
-						<ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-							aria-labelledby="dropdownDefault">
-							<li><a href="#"
-								class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-							</li>
-							<li><a href="#"
-								class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page 2</a>
-							</li>
-							<li><a href="#"
-								class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page 3</a>
-							</li>
-							<li><a href="deco"
-								class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-									out</a></li>
-						</ul>
-					</div>
-					<%				
+				</button>
+				<!-- Dropdown menu -->
+				<div id="dropdown"
+					class="hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
+					<ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+						aria-labelledby="dropdownDefault">
+						<li><a href="#"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+						</li>
+						<li><a href="#"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page
+								2</a></li>
+						<li><a href="#"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page
+								3</a></li>
+						<li><a href="deco"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+								out</a></li>
+					</ul>
+				</div>
+				<%
 				} else {
-					%>
-					<!-- Pas connecte -->
-					<a href="login"
-						class="hover:roland-orange rounded-full no-underline mx-2 px-4 py-2">
-						Admin Login</a>
-					<%
+				%>
+				<!-- Pas connecte -->
+				<a href="login"
+					class="hover:roland-orange rounded-full no-underline mx-2 px-4 py-2">
+					Admin Login</a>
+				<%
 				}
 				%>
 			</div>

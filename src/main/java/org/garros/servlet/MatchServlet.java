@@ -68,8 +68,6 @@ public class MatchServlet extends HttpServlet {
 			winner.add(playerService2.getPlayerById(winner_id).get(0));
 			looser.add(playerService2.getPlayerById(looser_id).get(0));
 			
-			System.out.println("eheh0");
-			System.out.println(scoreService.getScoreByMatchAndSet(1, 1).get(0));
 			
 			scoreSet1.add(scoreService.getScoreByMatchAndSet(match_num, 1).get(0));
 			scoreSet2.add(scoreService.getScoreByMatchAndSet(match_num, 2).get(0));

@@ -26,7 +26,7 @@ public class PlayerServlet extends HttpServlet{
 	private PlayerService playerService = new PlayerServiceImpl();
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
-		String pageName = "player.jsp";
+		String pageName = "/player.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);
@@ -41,11 +41,24 @@ public class PlayerServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 				
 		// D'abord on récupère l'id du joueur dont on veut la fiche
+		String[] li = req.getParameterValues("id");
+		int n = li.length;
+		for(int i=0; i<n; i++) {
+			System.out.println(li[i]);
+		}
+		
+		System.out.println(req.getParameter("id"));
+		
 		int id = Integer. parseInt(req.getParameter("id"));
 		
+		System.out.print("et mtn int id : ");
+		System.out.println(id);
+		
 		// Puis on fait la requette pour récupérer tout ce dont on a besoin
-		Player player;
-		player = (Player) playerService.getPlayerById(id);
+		Player player = new Player();
+		player = (Player) playerService.getPlayerById(id).get(0);
+		
+		System.out.println("on a reussi la requette");
 		
 		// Enfin on affiche le résultat en fonction du Player
 		req.setAttribute("player", player);

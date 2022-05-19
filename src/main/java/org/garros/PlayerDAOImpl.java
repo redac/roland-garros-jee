@@ -31,7 +31,8 @@ public class PlayerDAOImpl implements PlayerDAO {
 				/**
 				 * Create the a player object from the SQL result set
 				 */
-				Player player = new Player(id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed);
+				Player player = new Player(id, firstname, lastname, age, category, country, ranking, hand, nb_win,
+						nb_timePlayed);
 				players.add(player);
 			}
 		} catch (SQLException e) {
@@ -40,6 +41,19 @@ public class PlayerDAOImpl implements PlayerDAO {
 		}
 
 		return players;
+	}
+
+	@Override
+	public void doQuery(String query) {
+		Connection connection = DBManager.getInstance().getConnection();
+		Statement statement;
+		try {
+			statement = connection.createStatement();
+			statement.executeQuery(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -61,23 +75,43 @@ public class PlayerDAOImpl implements PlayerDAO {
 	public List<Player> findByWin(String category) {
 
 		return findByQuery(
-				"SELECT player_id, firstname, lastname, age,country,category,ranking, hand, nb_win, nb_timePlayed FROM players WHERE category='"+category +"' ORDER BY nb_win DESC;");
+				"SELECT player_id, firstname, lastname, age,country,category,ranking, hand, nb_win, nb_timePlayed FROM players WHERE category='"
+						+ category + "' ORDER BY nb_win DESC;");
 	}
-	
+
 	@Override
 	public List<Player> findById(int id) {
 
-		return findByQuery(
-				"SELECT * FROM players WHERE player_id='"+ id +"';");
+		return findByQuery("SELECT * FROM players WHERE player_id='" + id + "';");
 	}
-	
+
 	@Override
 	public List<Player> findByTime(String category) {
 
 		return findByQuery(
-				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed FROM players WHERE category='" + category + "' ORDER BY nb_timePlayed DESC;");
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed FROM players WHERE category='"
+						+ category + "' ORDER BY nb_timePlayed DESC;");
 	}
-	
-	
 
+	@Override
+	public void modifyPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname,int timePlayed, int nbWin, int ranking) {
+		doQuery("UPDATE players "
+				+ "set firstname=" + firstname + 
+				"set age=" + age +
+				"set category=" + category +
+				"set country=" + country +
+				"set hand=" + hand +
+				"set lastname=" + lastname +
+				"set nb_timePlayed=" + timePlayed +
+				"set nb_win=" + nbWin +
+				"set ranking=" + ranking +
+				"where player_id=" + id);
+	}
+
+	@Override
+	public void createPlayer(int age, String category, String country, String firstname, String hand, String lastname,int timePlayed, int nbWin, int ranking) {
+		doQuery("INSERT INTO players (age,category,country,firstname,hand,lastname,nb_timePlayed,nb_win,ranking)"
+				+ "VALUES (" + age + ",'" + category + "','" + country + "','" + firstname + "','" + hand + "','"
+				+ lastname + "," + timePlayed + "," + nbWin + "," + ranking + ")");
+	}
 }

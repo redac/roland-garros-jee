@@ -109,6 +109,13 @@ public class PlayerDAOImpl implements PlayerDAO {
 				+ lastname + "," + timePlayed + "," + nbWin + "," + ranking + ")");
 	}
 	
+	@Override 
+	public void createPlayer2(String firstname, String lastname, String hand, String category, String country) {
+		doQuery("INSERT INTO players (age,category,country,firstname,hand,lastname,nb_timePlayed,nb_win,ranking)"
+				+ "VALUES ( 12, '"+ category + "','" + country + "','" + firstname + "','" + hand + "','"
+				+ lastname + "', 100 , 3, 98)");
+	}
+	
 	@Override
 	public void deletePlayer(int id) {
 		doQuery("DELETE FROM players WHERE player_id=" + id);

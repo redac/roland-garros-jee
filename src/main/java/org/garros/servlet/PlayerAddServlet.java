@@ -14,19 +14,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /*
- * C'est ici qu'on fera les differentes requetes relatives aux joueurs :
- * GET -> obtenir une fiche joueur
+ * C'est ici qu'on fera la requete Post relative aux joueurs :
  * POST -> Rajouter un joueur
- * ...
  */
 
-@WebServlet("/player")
-public class PlayerServlet extends HttpServlet{
+@WebServlet("/addplayer")
+public class PlayerAddServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService = new PlayerServiceImpl();
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
-		String pageName = "/player.jsp";
+		String pageName = "/players";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);
@@ -38,18 +36,17 @@ public class PlayerServlet extends HttpServlet{
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-				
-		// D'abord on récupère l'id du joueur dont on veut la fiche		
-		int id = Integer.parseInt(req.getParameter("id"));
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		// Puis on fait la requete pour récupérer tout ce dont on a besoin
-		Player player = new Player();
-		player = (Player) playerService.getPlayerById(id).get(0);
+		// D'abord on rï¿½cupï¿½re les paramÃ¨tres
+		String firstname = req.getParameter("firstname");
+		String lastname = req.getParameter("lastname");
+		String hand = req.getParameter("hand");
+		String categorie = req.getParameter("categorie");
+		String country = req.getParameter("country");
 		
-		
-		// Enfin on affiche le résultat en fonction du Player
-		req.setAttribute("player", player);
+		//Player player = new Player(firstname, lastname, hand, categorie, country);
+		playerService.createPlayer2(firstname, lastname, hand, categorie, country);
 		doProcess(req, resp);
 		
 	}

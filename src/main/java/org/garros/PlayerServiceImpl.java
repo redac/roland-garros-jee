@@ -34,6 +34,11 @@ public class PlayerServiceImpl implements PlayerService {
 	public void putPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname) {
 		playerDAO.modifyPlayer(id, age, category, country, firstname, hand, lastname);
 	}
+	
+	@Override
+	public void createPlayer2(String firstname, String lastname, String hand, String category, String country) {
+		playerDAO.createPlayer2(firstname, lastname, hand, category, country);
+	}
 
 	@Override
 	public void deletePlayer(int id) {

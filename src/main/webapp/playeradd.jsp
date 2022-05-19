@@ -35,7 +35,7 @@
 		</div>
 		<form
 			class="w-full max-w-xs bg-white flex flex-col py-5 px-8 rounded-lg shadow-lg"
-			action="player" method="post">
+			action="addplayer" method="post">
 
 			<label class="text-gray-700 font-bold py-2" for="">Firstname</label>
 			<input

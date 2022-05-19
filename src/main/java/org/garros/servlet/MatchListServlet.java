@@ -22,7 +22,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/matches")
+@WebServlet("/matchs")
 public class MatchListServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -70,10 +70,10 @@ public class MatchListServlet extends HttpServlet {
 			int match_num = match.getMatchNum();
 			
 		
-			//player1.add(playerService2.getPlayerById(id_player1).get(0));
-			//player2.add(playerService2.getPlayerById(id_player2).get(0));
-			//winner.add(playerService2.getPlayerById(winner_id).get(0));
-			//looser.add(playerService2.getPlayerById(looser_id).get(0));
+			player1.add(playerService2.getPlayerById(id_player1).get(0));
+			player2.add(playerService2.getPlayerById(id_player2).get(0));
+			winner.add(playerService2.getPlayerById(winner_id).get(0));
+			looser.add(playerService2.getPlayerById(looser_id).get(0));
 			
 			
 			

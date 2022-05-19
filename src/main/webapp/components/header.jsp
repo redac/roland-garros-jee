@@ -61,7 +61,7 @@
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Players</a>
 				<a href="stats"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Statistics</a>
-				<a href="matches"
+				<a href="matchs"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
 
 				<!-- Vérification connection -->

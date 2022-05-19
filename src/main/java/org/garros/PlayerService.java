@@ -7,11 +7,11 @@ public interface PlayerService {
 
 	List<Player> getPlayerByName(String searchText);
 	
-	List<Player> getPlayerByWin(String category);
+	List<Player> getPlayerByWin();
 
 	List<Player> getPlayerById(int id);
 	
-	List<Player> getPlayerByTime(String category);
+	List<Player> getPlayerByTime();
 	
 	void putPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname);
 }

@@ -108,4 +108,22 @@ public class MatchListServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
 	}
+
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+		int match_num = Integer.parseInt(req.getParameter("match_num"));
+		matchService.deleteMatch(match_num);
+
+		String pageName = "/matchlist.jsp";
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
+		try {
+			rd.forward(req, res);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

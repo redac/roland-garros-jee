@@ -151,6 +151,13 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 							</table>
 						</div>
 					</div>
+					<div class="flex justify-between items-center my-4">
+						<form action="playeradd.jsp">
+							<button
+								class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
+								Add player</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

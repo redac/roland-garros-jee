@@ -16,8 +16,6 @@ public interface PlayerDAO {
 
 	List<Player> findByQuery(String query);
 
-	void doQuery(String query);
-
 	void modifyPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname,
 			int timePlayed, int nbWin, int ranking);
 

@@ -43,7 +43,6 @@ public class PlayerDAOImpl implements PlayerDAO {
 		return players;
 	}
 
-	@Override
 	public void doQuery(String query) {
 		Connection connection = DBManager.getInstance().getConnection();
 		Statement statement;

@@ -64,12 +64,16 @@ String hand = wantedPlayer.getHand();
 				class="text-gray-700 font-bold py-2" for="">Age</label> <input
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
 				type="text" name="age" value="<%=age%>"> <label
-				class="text-gray-700 font-bold py-2" for="">Hand</label> <input
+				class="text-gray-700 font-bold py-2" for="">Hand</label> <select
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline  focus:border-rolandgreen py-1 px-3 mb-3"
-				type="text" name="hand" value="<%=hand%>"> <label
-				class="text-gray-700 font-bold py-2" for="">Category</label> <input
+				name="hand"><option type="text" value="<%=hand%>"><%=hand%></option>
+				<option value="Left">Left</option>
+				<option value="Right">Right</option></select> <label
+				class="text-gray-700 font-bold py-2" for="">Category</label> <select
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
-				type="text" name="category" value="<%=category%>"><label
+				name="category"><option type="text" value="<%=category%>"><%=category%></option>
+				<option value="Men">Men</option>
+				<option value="Women">Women</option></select><label
 				class="text-gray-700 font-bold py-2" for="">Country</label> <input
 				class="text-gray-700 shadow border rounded border-gray-300 mb-3 py-1 px-3 focus:outline-none focus:border-rolandgreen focus:shadow-outline"
 				type="text" name="country" value="<%=country%>">
@@ -77,6 +81,9 @@ String hand = wantedPlayer.getHand();
 				<button
 					class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
 					Modify</button>
+				<button href="login"
+					class="bg-rolandorange hover:bg-orange-900 text-white font-bold rounded py-2 px-4">
+					Delete</button>
 			</div>
 
 		</form>

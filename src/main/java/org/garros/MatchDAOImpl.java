@@ -57,6 +57,12 @@ public class MatchDAOImpl implements MatchDAO {
 
 		return findByQuery("SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches ;");
 	}
+	
+	@Override
+	public List<Match> findByNum(int match_num) {
+
+		return findByQuery("SELECT match_num, date, player1_id, player2_id, winner_id, looser_id FROM matches WHERE category='" + match_num + "' ;");
+	}
 
 	@Override
 	public void createMatch(int date, int id1, int id2, int idWin, int idLose) {

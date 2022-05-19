@@ -99,18 +99,12 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 										Player player1 = listPlayer1.get(numPlayer);
 										String firstname1 = player1.getFirstname();
 										String lastname1 = player1.getLastname();
-										int age1 = player1.getAge();
-										String category1 = player1.getCategory();
 										String country1 = player1.getCountry();
-										int ranking1 = player1.getRanking();
 
 										Player player2 = listPlayer2.get(numPlayer);
 										String firstname2 = player2.getFirstname();
-										String lastname2 = player2.getLastname();
-										int age2 = player2.getAge();
-										String category2 = player2.getCategory();
+										String lastname2 = player2.getLastname();;
 										String country2 = player2.getCountry();
-										int ranking2 = player2.getRanking();
 
 										Player winner = listWinner.get(numWinnerLooser);
 										String firstnameWinner = winner.getFirstname();

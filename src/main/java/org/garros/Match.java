@@ -66,5 +66,8 @@ public class Match {
 		this.winner_id = winner_id;
 		this.looser_id = looser_id;
 	}
+	public Match() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

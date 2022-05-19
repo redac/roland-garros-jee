@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 
 @WebServlet("/player")
-public class PlayerServlet extends HttpServlet {
+public class PlayerServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService = new PlayerServiceImpl();
 
@@ -39,34 +39,36 @@ public class PlayerServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		// D'abord on récupère l'id du joueur dont on veut la fiche
+				
+		// D'abord on récupère l'id du joueur dont on veut la fiche		
 		int id = Integer.parseInt(req.getParameter("id"));
-
+		
 		// Puis on fait la requete pour récupérer tout ce dont on a besoin
 		Player player = new Player();
 		player = (Player) playerService.getPlayerById(id).get(0);
-
+		
+		
 		// Enfin on affiche le résultat en fonction du Player
 		req.setAttribute("player", player);
 		doProcess(req, resp);
-
+		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		
 		// D'abord on récupère les paramètres
 		String firstname = req.getParameter("firstname");
 		String lastname = req.getParameter("lastname");
 		String hand = req.getParameter("hand");
 		String categorie = req.getParameter("categorie");
 		String country = req.getParameter("country");
-
+		
 		Player player = new Player(firstname, lastname, hand, categorie, country);
 
+		
 	}
-
+	
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));
@@ -81,5 +83,5 @@ public class PlayerServlet extends HttpServlet {
 		int ranking = Integer.parseInt(req.getParameter("ranking"));
 		playerService.putPlayer(id, age, category, country, firstname, hand, firstname);
 	}
-
+	
 }

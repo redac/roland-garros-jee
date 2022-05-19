@@ -1,5 +1,5 @@
 <%@ page import="org.garros.*"%>
-<%@ page import="java.util.List"%>
+<%@ page import="java.util.*	"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 	<div
 		class="flex flex-col h-screen font-sans antialiased bg-grey-lightest">
 		<!-- Top Nav -->
-		<jsp:include page='header.jsp' />
+		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
 		<div class="flex justify-center items-center bg-grey-lightest">
 			<div class="container mx-auto px-4 sm:px-8">
@@ -63,33 +63,41 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 									</tr>
 								</thead>
 								<tbody>
+									<%
+									for (Player player : listPlayers) {
+										int id = player.getId();
+										String firstname = player.getFirstname();
+										String lastname = player.getLastname();
+										int age = player.getAge();
+										String category = player.getCategory();
+										String country = player.getCountry();
+										int ranking = player.getRanking();
+										String hand = player.getHand();
+									%>
 									<tr>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 											<div class="flex">
 												<div class="flex-shrink-0 w-10 h-10">
 													<img class="w-full h-full rounded-full"
-														src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+														src="https://images.unsplash.com/photo-1560012057-4372e14c5085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
 														alt="" />
 												</div>
 												<div class="ml-3">
-													<%
-													String firstname = "Loukas";
-													String lastname = "Ducul";
-													int id = 3;
-													%>
-													<p class="text-gray-900 whitespace-no-wrap"><%=firstname%> <%=lastname%></p>
-													<p class="text-gray-600 whitespace-no-wrap"><%=id%></p>
+													<p class="text-gray-900 whitespace-no-wrap"><%=firstname%>
+														<%=lastname%></p>
+													<p class="text-gray-600 whitespace-no-wrap"><%=ranking%></p>
+													<!--  -->
 												</div>
 											</div>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap">Right</p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=hand%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap">21</p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=age%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -97,12 +105,12 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 											class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
 												<span aria-hidden
 												class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-												<span class="relative">Men</span>
+												<span class="relative"><%=category%></span>
 										</span>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap">France</p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=country%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right">
@@ -116,23 +124,9 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 											</button>
 										</td>
 									</tr>
-									<%-- <%
-									for (Player player : listPlayers) {
-										int id = player.getId();
-										String firstname = player.getFirstname();
-										String lastname = player.getLastname();
-										int age = player.getAge();
-										String category = player.getCategory();
-										String country = player.getCountry();
-										int ranking = player.getRanking();
-										String hand = player.getHand();
-									%>
-									<tr>
-										<td><%=age%></td>
-									</tr>
 									<%
 									}
-									%> --%>
+									%>
 								</tbody>
 							</table>
 						</div>
@@ -142,7 +136,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 		</div>
 	</div>
 	<!-- Footer -->
-	<jsp:include page='footer.jsp' />
+	<jsp:include page='components/footer.jsp' />
 	</div>
 </body>
 </html>

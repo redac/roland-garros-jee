@@ -16,15 +16,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/PlayerList")
-public class PlayerListServlet extends HttpServlet {
+@WebServlet("/stats")
+public class StatsServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private PlayerService playerService = new PlayerServiceImpl();
+	private PlayerService playerService2 = new PlayerServiceImpl();
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
 		String searchText = request.getParameter("searchText");
+		String categoryMen = "Men";
+		String categoryWomen = "Women";
 
 		HttpSession session = request.getSession();
 		@SuppressWarnings("unchecked")
@@ -35,15 +37,31 @@ public class PlayerListServlet extends HttpServlet {
 		}
 		searchHistory.add(searchText);
 
-		List<Player> players = new ArrayList<Player>();
+		List<Player> players2 = new ArrayList<Player>();
 		if (searchText == null) {
-			players = playerService.getAllPlayers();
+			players2 = playerService2.getAllPlayers();
 		} else {
-			players = playerService.getPlayerByName(searchText);
+			players2 = playerService2.getPlayerByName(searchText);
 		}
-		request.setAttribute("listPlayers", players);
+		request.setAttribute("listPlayers2", players2);
+		
+		List<Player> playersWinMen = new ArrayList<Player>();
+		playersWinMen = playerService2.getPlayerByWin(categoryMen);
+		request.setAttribute("listPlayersWinMen", playersWinMen);
+		
+		List<Player> playersWinWomen = new ArrayList<Player>();
+		playersWinWomen = playerService2.getPlayerByWin(categoryWomen);
+		request.setAttribute("listPlayersWinWomen", playersWinWomen);
+		
+		List<Player> playersTimeMen = new ArrayList<Player>();
+		playersTimeMen = playerService2.getPlayerByTime(categoryMen);
+		request.setAttribute("listPlayersTimeMen", playersTimeMen);
+		
+		List<Player> playersTimeWomen = new ArrayList<Player>();
+		playersTimeWomen = playerService2.getPlayerByTime(categoryWomen);
+		request.setAttribute("listPlayersTimeWomen", playersTimeWomen);
 
-		String pageName = "/playerlist.jsp";
+		String pageName = "/stats.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
 		try {
 			rd.forward(request, response);

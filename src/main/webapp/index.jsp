@@ -25,9 +25,10 @@
 	<div
 		class="flex flex-col bg-[url('https://images.unsplash.com/photo-1465125672495-63cdc2fa22ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80')] h-screen justify-between font-sans antialiased bg-grey-lightest">
 		<!-- Top Nav -->
-		<jsp:include page='header.jsp' />
+		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
-		<div class="flex justify-center items-center bg-grey-lightest">
+		<div
+			class="flex flex-grow justify-center items-center bg-grey-lightest">
 			<h1 class="text-6xl font-extrabold">
 				<span
 					class="bg-clip-text drop-shadow-md text-slate-200 hover:text-rolandgreen">Welcome
@@ -35,7 +36,7 @@
 			</h1>
 		</div>
 		<!-- Footer -->
-		<jsp:include page='footer.jsp' />
+		<jsp:include page='components/footer.jsp' />
 	</div>
 </body>
 </html>

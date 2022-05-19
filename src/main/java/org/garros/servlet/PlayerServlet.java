@@ -16,42 +16,21 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/PlayerList")
-public class PlayerListServlet extends HttpServlet {
+/*
+ * C'est ici qu'on fera les differentes requettes relatives aux joueurs :
+ * GET -> obtenir une fiche joueur
+ * POST -> Rajouter un joueur
+ * ...
+ */
 
+@WebServlet("/player")
+public class PlayerServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private PlayerService playerService = new PlayerServiceImpl();
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
-		String searchText = request.getParameter("searchText");
-
-		HttpSession session = request.getSession();
-		@SuppressWarnings("unchecked")
-		List<String> searchHistory = (List<String>) session.getAttribute("SearchHistory");
-		if (searchHistory == null) {
-			searchHistory = new ArrayList<>();
-			session.setAttribute("SearchHistory", searchHistory);
-		}
-		searchHistory.add(searchText);
-
-		List<Player> players = new ArrayList<Player>();
-		if (searchText == null) {
-			players = playerService.getAllPlayers();
-		} else {
-			players = playerService.getPlayerByName(searchText);
-		}
-		request.setAttribute("listPlayers", players);
-
-		String pageName = "/playerlist.jsp";
-		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
-		try {
-			rd.forward(request, response);
-		} catch (ServletException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	@Override

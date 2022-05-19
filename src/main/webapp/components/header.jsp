@@ -90,12 +90,10 @@
 						<li><a href="#"
 							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
 						</li>
+						<li><a href="playeradd.jsp"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add player</a></li>
 						<li><a href="#"
-							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page
-								2</a></li>
-						<li><a href="#"
-							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Page
-								3</a></li>
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add match</a></li>
 						<li><a href="deco"
 							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
 								out</a></li>

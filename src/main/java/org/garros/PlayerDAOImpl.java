@@ -48,7 +48,7 @@ public class PlayerDAOImpl implements PlayerDAO {
 		Statement statement;
 		try {
 			statement = connection.createStatement();
-			statement.executeQuery(query);
+			statement.executeUpdate(query);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -93,18 +93,15 @@ public class PlayerDAOImpl implements PlayerDAO {
 	}
 
 	@Override
-	public void modifyPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname,int timePlayed, int nbWin, int ranking) {
+	public void modifyPlayer(int id, int age, String category, String country, String firstname, String hand, String lastname) {
 		doQuery("UPDATE players "
-				+ "set firstname=" + firstname + 
-				"set age=" + age +
-				"set category=" + category +
-				"set country=" + country +
-				"set hand=" + hand +
-				"set lastname=" + lastname +
-				"set nb_timePlayed=" + timePlayed +
-				"set nb_win=" + nbWin +
-				"set ranking=" + ranking +
-				"where player_id=" + id);
+				+ "SET firstname='" + firstname + 
+				"' , age=" + age +
+				" , category='" + category +
+				"' , country='" + country +
+				"' , hand='" + hand +
+				"' , lastname='" + lastname +
+				"' where player_id=" + id);
 	}
 
 	@Override

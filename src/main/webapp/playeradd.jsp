@@ -3,9 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-Player wantedPlayer = (Player) request.getAttribute("player");
-%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -24,18 +21,8 @@ Player wantedPlayer = (Player) request.getAttribute("player");
 		}
 	}
 </script>
-<title>Player Page — Roland-Garros</title>
+<title>Add Player Page — Roland-Garros</title>
 </head>
-<%
-int id = wantedPlayer.getId();
-String firstname = wantedPlayer.getFirstname();
-String lastname = wantedPlayer.getLastname();
-int age = wantedPlayer.getAge();
-String category = wantedPlayer.getCategory();
-String country = wantedPlayer.getCountry();
-int ranking = wantedPlayer.getRanking();
-String hand = wantedPlayer.getHand();
-%>
 <body>
 	<!-- Top Nav -->
 	<jsp:include page='components/header.jsp' />
@@ -44,47 +31,37 @@ String hand = wantedPlayer.getHand();
 		class="flex flex-col h-screen bg-grey-lightest justify-center items-center">
 		<div>
 			<h2 class="text-xl font-medium leading-tight">
-				Player :
-				<%=firstname%>
-				<%=lastname%></h2>
+				Player :</h2>
 		</div>
 		<form
 			class="w-full max-w-xs bg-white flex flex-col py-5 px-8 rounded-lg shadow-lg"
-			action="PlayerModifyServlet"
-			method="post">
+			action="player" method="post">
 
-			<label class="text-gray-700 font-bold py-2" for="">ID</label> <input
+			<label class="text-gray-700 font-bold py-2" for="">Firstname</label>
+			<input
+				name="firstname"
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
-				type="text" name="id" value="<%=id%>" readonly> <label
-				class="text-gray-700 font-bold py-2" for="">Firstname</label> <input
-				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
-				type="text" name="firstname" value="<%=firstname%>"> <label
+				type="text"> <label
 				class="text-gray-700 font-bold py-2" for="">Lastname</label> <input
+				name="lastname"
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
-				type="text" name="lastname" value="<%=lastname%>"> <label
-				class="text-gray-700 font-bold py-2" for="">Age</label> <input
-				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
-				type="text" name="age" value="<%=age%>"> <label
-				class="text-gray-700 font-bold py-2" for="">Hand</label> <select
+				type="text"> <label
+				class="text-gray-700 font-bold py-2" for="">Hand</label> <input
+				name="hand"
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline  focus:border-rolandgreen py-1 px-3 mb-3"
-				name="hand"><option type="text" value="<%=hand%>"><%=hand%></option>
-				<option value="Left">Left</option>
-				<option value="Right">Right</option></select> <label
-				class="text-gray-700 font-bold py-2" for="">Category</label> <select
+				type="text"> <label
+				class="text-gray-700 font-bold py-2" for="">Category</label> <input
+				name="categorie"
 				class="text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline focus:border-rolandgreen py-1 px-3 mb-3"
-				name="category"><option type="text" value="<%=category%>"><%=category%></option>
-				<option value="Men">Men</option>
-				<option value="Women">Women</option></select><label
+				type="text" ><label
 				class="text-gray-700 font-bold py-2" for="">Country</label> <input
+				name="country"
 				class="text-gray-700 shadow border rounded border-gray-300 mb-3 py-1 px-3 focus:outline-none focus:border-rolandgreen focus:shadow-outline"
-				type="text" name="country" value="<%=country%>">
+				type="text" >
 			<div class="flex justify-between items-center my-4">
 				<button
 					class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
-					Modify</button>
-				<button href="login"
-					class="bg-rolandorange hover:bg-orange-900 text-white font-bold rounded py-2 px-4">
-					Delete</button>
+					Add player</button>
 			</div>
 
 		</form>

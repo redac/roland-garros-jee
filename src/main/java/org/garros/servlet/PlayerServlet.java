@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /*
- * C'est ici qu'on fera les differentes requettes relatives aux joueurs :
+ * C'est ici qu'on fera les differentes requetes relatives aux joueurs :
  * GET -> obtenir une fiche joueur
  * POST -> Rajouter un joueur
  * ...
@@ -41,9 +41,9 @@ public class PlayerServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 				
 		// D'abord on récupère l'id du joueur dont on veut la fiche		
-		int id = Integer. parseInt(req.getParameter("id"));
+		int id = Integer.parseInt(req.getParameter("id"));
 		
-		// Puis on fait la requette pour récupérer tout ce dont on a besoin
+		// Puis on fait la requete pour récupérer tout ce dont on a besoin
 		Player player = new Player();
 		player = (Player) playerService.getPlayerById(id).get(0);
 		
@@ -57,6 +57,31 @@ public class PlayerServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		// D'abord on récupère les paramètres
+		String firstname = req.getParameter("firstname");
+		String lastname = req.getParameter("lastname");
+		String hand = req.getParameter("hand");
+		String categorie = req.getParameter("categorie");
+		String country = req.getParameter("country");
+		
+		Player player = new Player(firstname, lastname, hand, categorie, country);
+		//playerService.createplayer2(player);
 		
 	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int id = Integer.parseInt(req.getParameter("id"));
+		int age = Integer.parseInt(req.getParameter("age"));
+		String country = req.getParameter(req.getParameter("country"));
+		String firstname = req.getParameter(req.getParameter("firstname"));
+		String name = req.getParameter(req.getParameter("name"));
+		String hand = req.getParameter(req.getParameter("hand"));
+		String category = req.getParameter(req.getParameter("category"));
+		int timePlayed = Integer.parseInt(req.getParameter("timePlayed"));
+		int nbWin = Integer.parseInt(req.getParameter("nbWin"));
+		int ranking = Integer.parseInt(req.getParameter("ranking"));
+		playerService.putPlayer(id, age, category, country, firstname, hand, firstname);
+	}
+	
 }

@@ -1,8 +1,6 @@
 package org.garros.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.garros.Player;
 import org.garros.PlayerService;
@@ -14,7 +12,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /*
  * C'est ici qu'on fera les differentes requettes relatives aux joueurs :
@@ -29,13 +26,31 @@ public class PlayerServlet extends HttpServlet{
 	private PlayerService playerService = new PlayerServiceImpl();
 
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) {
-
-		
+		String pageName = "player.jsp";
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(pageName);
+		try {
+			rd.forward(request, response);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+				
+		// D'abord on récupère l'id du joueur dont on veut la fiche
+		int id = Integer. parseInt(req.getParameter("id"));
+		
+		// Puis on fait la requette pour récupérer tout ce dont on a besoin
+		Player player;
+		player = (Player) playerService.getPlayerById(id);
+		
+		// Enfin on affiche le résultat en fonction du Player
+		req.setAttribute("player", player);
 		doProcess(req, resp);
+		
 	}
 
 	@Override

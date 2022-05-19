@@ -19,7 +19,7 @@
 		}
 	}
 </script>
-<title>Login — Roland-Garros</title>
+<title>Player — Roland-Garros</title>
 </head>
 <body class="flex flex-col min-h-screen">
 	<div>

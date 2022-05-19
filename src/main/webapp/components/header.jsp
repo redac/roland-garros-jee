@@ -84,18 +84,15 @@
 				</button>
 				<!-- Dropdown menu -->
 				<div id="dropdown"
-					class="hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
+					class="hidden bg-white divide-y divide-gray-100 rounded shadow w-44">
 					<ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
 						aria-labelledby="dropdownDefault">
-						<li><a href="#"
-							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-						</li>
 						<li><a href="playeradd.jsp"
-							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add player</a></li>
+							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Add player</a></li>
 						<li><a href="#"
-							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add match</a></li>
+							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Add match</a></li>
 						<li><a href="deco"
-							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+							class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600">Sign
 								out</a></li>
 					</ul>
 				</div>

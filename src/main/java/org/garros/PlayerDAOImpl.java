@@ -71,11 +71,10 @@ public class PlayerDAOImpl implements PlayerDAO {
 	}
 
 	@Override
-	public List<Player> findByWin(String category) {
+	public List<Player> findByWin() {
 
 		return findByQuery(
-				"SELECT player_id, firstname, lastname, age,country,category,ranking, hand, nb_win, nb_timePlayed FROM players WHERE category='"
-						+ category + "' ORDER BY nb_win DESC;");
+				"SELECT player_id, firstname, lastname, age,country,category,ranking, hand, nb_win, nb_timePlayed FROM players ORDER BY nb_win DESC;");
 	}
 
 	@Override
@@ -85,11 +84,10 @@ public class PlayerDAOImpl implements PlayerDAO {
 	}
 
 	@Override
-	public List<Player> findByTime(String category) {
+	public List<Player> findByTime() {
 
 		return findByQuery(
-				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed FROM players WHERE category='"
-						+ category + "' ORDER BY nb_timePlayed DESC;");
+				"SELECT player_id, firstname, lastname, age, category, country, ranking, hand, nb_win, nb_timePlayed FROM players ORDER BY nb_timePlayed DESC;");
 	}
 
 	@Override

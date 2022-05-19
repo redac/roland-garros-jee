@@ -26,6 +26,9 @@ List<Score> listScoreSet1 = (List<Score>) request.getAttribute("listScoreSet1");
 <%
 List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 %>
+<%
+List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
+%>
 
 <html>
 <head>
@@ -89,6 +92,12 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
 											player2_score2</th>
+																					<th
+											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+											player1_score3</th>
+										<th
+											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+											player2_score3</th>
 										<th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100"></th>
 									</tr>
 								</thead>
@@ -134,6 +143,10 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 										Score scoreSet2 = listScoreSet2.get(numMatch);
 										int player1_score2 = scoreSet2.getPlayer1Score();
 										int player2_score2 = scoreSet2.getPlayer2Score();
+										
+										Score scoreSet3 = listScoreSet3.get(numMatch);
+										int player1_score3 = scoreSet3.getPlayer1Score();
+										int player2_score3 = scoreSet3.getPlayer2Score();
 
 										numPlayer = numPlayer + 1;
 										numWinnerLooser = numWinnerLooser + 1;
@@ -183,6 +196,14 @@ List<Score> listScoreSet2 = (List<Score>) request.getAttribute("listScoreSet2");
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 											<p class="text-gray-900 whitespace-no-wrap"><%=player2_score2%></p>
+										</td>
+										<td
+											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="text-gray-900 whitespace-no-wrap"><%=player1_score3%></p>
+										</td>
+										<td
+											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="text-gray-900 whitespace-no-wrap"><%=player2_score3%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right">

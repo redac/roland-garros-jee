@@ -44,6 +44,7 @@ public class MatchServlet extends HttpServlet {
 		
 		List<Score> scoreSet1 = new ArrayList<Score>();
 		List<Score> scoreSet2 = new ArrayList<Score>();
+		List<Score> scoreSet3 = new ArrayList<Score>();
 		
 		String searchText = request.getParameter("searchText");
 
@@ -71,6 +72,7 @@ public class MatchServlet extends HttpServlet {
 			
 			scoreSet1.add(scoreService.getScoreByMatchAndSet(match_num, 1).get(0));
 			scoreSet2.add(scoreService.getScoreByMatchAndSet(match_num, 2).get(0));
+			scoreSet3.add(scoreService.getScoreByMatchAndSet(match_num, 2).get(0));
 
 			
 		}
@@ -82,6 +84,7 @@ public class MatchServlet extends HttpServlet {
 		
 		request.setAttribute("listScoreSet1", scoreSet1);
 		request.setAttribute("listScoreSet2", scoreSet2);
+		request.setAttribute("listScoreSet3", scoreSet3);
 		
 		
 		

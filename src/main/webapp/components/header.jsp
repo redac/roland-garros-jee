@@ -14,7 +14,8 @@
 	href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" />
 <style>
 @import
-	url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;900&family=Newsreader:ital,opsz,wght@1,6..72,300&display=swap');
+	url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;900&family=Newsreader:ital,opsz,wght@1,6..72,300&display=swap')
+	;
 </style>
 <script>
 	tailwind.config = {
@@ -56,11 +57,11 @@
 						decoration-rolandorange font-bold">Roland-Garros</a>
 			<!-- Navigation -->
 			<div class="items-center hidden sm:flex">
-				<a href="PlayerList"
+				<a href="players"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Players</a>
 				<a href="stats"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Statistics</a>
-				<a href="MatchList"
+				<a href="matches"
 					class="hover:roland-orange no-underline mx-2 px-2 py-2">Matches</a>
 
 				<!-- Vérification connection -->

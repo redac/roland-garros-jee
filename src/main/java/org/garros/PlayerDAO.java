@@ -8,9 +8,9 @@ public interface PlayerDAO {
 
 	List<Player> findByName(String searchText);
 
-	List<Player> findByWin(String category);
+	List<Player> findByWin();
 
-	List<Player> findByTime(String category);
+	List<Player> findByTime();
 
 	List<Player> findById(int id);
 

@@ -27,6 +27,16 @@ public class StatsServlet extends HttpServlet {
 		String searchText = request.getParameter("searchText");
 		String categoryMen = "Men";
 		String categoryWomen = "Women";
+		List<Player> playersWin = new ArrayList<Player>();
+		List<Player> playersTime = new ArrayList<Player>();
+		
+		playersWin=playerService2.getPlayerByWin();
+		playersTime=playerService2.getPlayerByTime();
+		
+		List<Player> playersWinMen = new ArrayList<Player>();
+		List<Player> playersWinWomen = new ArrayList<Player>();
+		List<Player> playersTimeMen = new ArrayList<Player>();
+		List<Player> playersTimeWomen = new ArrayList<Player>();
 
 		HttpSession session = request.getSession();
 		@SuppressWarnings("unchecked")
@@ -37,28 +47,27 @@ public class StatsServlet extends HttpServlet {
 		}
 		searchHistory.add(searchText);
 
-		List<Player> players2 = new ArrayList<Player>();
-		if (searchText == null) {
-			players2 = playerService2.getAllPlayers();
-		} else {
-			players2 = playerService2.getPlayerByName(searchText);
+		for(Player playerwin : playersWin) {
+			if(playerwin.getCategory().equals(categoryMen)) {
+				playersWinMen.add(playerwin);
+			}
+			if(playerwin.getCategory().equals(categoryWomen)) {
+				playersWinWomen.add(playerwin);
+			}
 		}
-		request.setAttribute("listPlayers2", players2);
+		for(Player playertime : playersTime) {
+			if(playertime.getCategory().equals(categoryMen)) {
+				playersTimeMen.add(playertime);
+			}
+			if(playertime.getCategory().equals(categoryWomen)) {
+				playersTimeWomen.add(playertime);
+			}
+		}
+		
 
-		List<Player> playersWinMen = new ArrayList<Player>();
-		playersWinMen = playerService2.getPlayerByWin(categoryMen);
 		request.setAttribute("listPlayersWinMen", playersWinMen);
-
-		List<Player> playersWinWomen = new ArrayList<Player>();
-		playersWinWomen = playerService2.getPlayerByWin(categoryWomen);
 		request.setAttribute("listPlayersWinWomen", playersWinWomen);
-
-		List<Player> playersTimeMen = new ArrayList<Player>();
-		playersTimeMen = playerService2.getPlayerByTime(categoryMen);
 		request.setAttribute("listPlayersTimeMen", playersTimeMen);
-
-		List<Player> playersTimeWomen = new ArrayList<Player>();
-		playersTimeWomen = playerService2.getPlayerByTime(categoryWomen);
 		request.setAttribute("listPlayersTimeWomen", playersTimeWomen);
 
 		String pageName = "/stats.jsp";

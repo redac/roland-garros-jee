@@ -32,7 +32,7 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 		}
 	}
 </script>
-<title>MATCHES — Roland-Garros</title>
+<title>Matches — Roland-Garros</title>
 </head>
 <body>
 	<div
@@ -44,7 +44,7 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 			<div class="container mx-auto px-4 sm:px-8">
 				<div class="py-8">
 					<div>
-						<h2 class="text-2xl font-semibold leading-tight">Match</h2>
+						<h2 class="text-2xl font-semibold leading-tight">All matches</h2>
 					</div>
 					<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
 						<div
@@ -57,31 +57,19 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 											n° match</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											Players</th>
-										<th
-											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
 											Winner</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
 											Date</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											player1_score1</th>
+											Set 1</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											player2_score1</th>
+											Set 2</th>
 										<th
 											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											player1_score2</th>
-										<th
-											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											player2_score2</th>
-										<th
-											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											player1_score3</th>
-										<th
-											class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											player2_score3</th>
+											Set 3</th>
 										<th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100"></th>
 									</tr>
 								</thead>
@@ -142,18 +130,17 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 												</div>
 												<div class="ml-3">
 													<p class="text-gray-900 whitespace-no-wrap"><%=match_num%>
+													<p class="text-gray-900 whitespace-no-wrap"><%=lastname1%>
+													</p>
+													<p class="font-semibold text-gray-900 whitespace-no-wrap">Vs.
+													</p>
+													<p class="text-gray-900 whitespace-no-wrap"><%=lastname2%></p>
 												</div>
 											</div>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap"><%=firstname1%>/
-											</p>
-											<p class="text-gray-900 whitespace-no-wrap"><%=firstname2%></p>
-										</td>
-										<td
-											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap"><%=firstnameWinner%></p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=lastnameWinner%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -162,26 +149,20 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 											<p class="text-gray-900 whitespace-no-wrap"><%=player1_score1%></p>
-										</td>
-										<td
-											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="font-semibold text-gray-900 whitespace-no-wrap">Vs.</p>
 											<p class="text-gray-900 whitespace-no-wrap"><%=player2_score1%></p>
-										</td>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 											<p class="text-gray-900 whitespace-no-wrap"><%=player1_score2%></p>
-										</td>
-										<td
-											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="font-semibold text-gray-900 whitespace-no-wrap">Vs.</p>
 											<p class="text-gray-900 whitespace-no-wrap"><%=player2_score2%></p>
+										</td>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 											<p class="text-gray-900 whitespace-no-wrap"><%=player1_score3%></p>
-										</td>
-										<td
-											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+											<p class="font-semibold text-gray-900 whitespace-no-wrap">Vs.</p>
 											<p class="text-gray-900 whitespace-no-wrap"><%=player2_score3%></p>
 										</td>
 										<td

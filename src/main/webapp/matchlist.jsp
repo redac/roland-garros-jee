@@ -188,8 +188,8 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 											<%
 											if(session.getAttribute("connecte") != null){
 												%>
-												<!-- Bouton pour détailler un joueur -->
-												<a href="player?id=<%=match_num%>">
+												<!-- Bouton pour editer un match -->
+												<a href="match?id=<%=match_num%>">
 													<button type="submit"
 														class="inline-block text-gray-500 hover:text-gray-700">
 														<svg class="inline-block h-6 w-6 fill-current"

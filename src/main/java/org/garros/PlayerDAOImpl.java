@@ -59,7 +59,7 @@ public class PlayerDAOImpl implements PlayerDAO {
 	public List<Player> findByName(String searchText) {
 
 		return findByQuery(
-				"SELECT player_id, firstname, lastname, age, category, country, ranking, nb_win, nb_timePlayed hand FROM players WHERE firstname like'%"
+				"SELECT * FROM players WHERE firstname like'%"
 						+ searchText + "%' OR lastname like'%" + searchText + "%';");
 	}
 

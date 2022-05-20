@@ -36,7 +36,7 @@ public class PlayerListServlet extends HttpServlet {
 		searchHistory.add(searchText);
 
 		List<Player> players = new ArrayList<Player>();
-		if (searchText == null) {
+		if (searchText == null || searchText == ""  ) {
 			players = playerService.getAllPlayers();
 		} else {
 			players = playerService.getPlayerByName(searchText);

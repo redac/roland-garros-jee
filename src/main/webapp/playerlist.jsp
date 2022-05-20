@@ -32,29 +32,40 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 		<!-- Top Nav -->
 		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
-		<div class="flex justify-center items-center bg-grey-lightest">
+		<div
+			class="flex flex-col justify-center items-center bg-grey-lightest">
 			<div class="container mx-auto px-4 sm:px-8">
 				<div class="py-8">
 					<div class="flex flex-col justify-center">
-						<h2 class="text-2xl font-semibold leading-tight">Players</h2>
-						<!-- Vérification connection -->
-					<%
-					Object connecte = session.getAttribute("connecte");
+						<div class="flex justify-between items-center my-4">
+							<h2 class="text-2xl font-semibold leading-tight">Players</h2>
+							<!-- Vérification connection -->
+							<%
+							Object connecte = session.getAttribute("connecte");
 
-					if (connecte != null) {
-						User user = (User) session.getAttribute("connected_user");
-						user.aff();
-					%>
+							if (connecte != null) {
+								User user = (User) session.getAttribute("connected_user");
+								user.aff();
+							%>
+							<form action="playeradd.jsp">
+								<button
+									class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
+									New player</button>
+							</form>
+						</div>
+						<%
+						}
+						%>
+					</div>
 					<div class="flex justify-between items-center my-4">
-						<form action="playeradd.jsp">
+						<form action="players">
+							<input name="searchText"
+								class="text-gray-700 mr-2 shadow border rounded border-gray-300 mb-3 py-1 px-3 focus:outline-none focus:border-rolandgreen focus:shadow-outline"
+								type="text" placeholder="Search...">
 							<button
 								class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
-								New player</button>
+								Search</button>
 						</form>
-					</div>
-					<%
-					}
-					%>
 					</div>
 					<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
 						<div
@@ -172,8 +183,9 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 				</div>
 			</div>
 		</div>
-		<!-- Footer -->
-		<jsp:include page='components/footer.jsp' />
+
 	</div>
+	<!-- Footer -->
+	<jsp:include page='components/footer.jsp' />
 </body>
 </html>

@@ -102,8 +102,8 @@ public class PlayerDAOImpl implements PlayerDAO {
 	public void createPlayer(int age, String category, String country, String firstname, String hand, String lastname,
 			int timePlayed, int nbWin, int ranking) {
 		doQuery("INSERT INTO players (age,category,country,firstname,hand,lastname,nb_timePlayed,nb_win,ranking)"
-				+ "VALUES (" + age + ",'" + category + "','" + country + "','" + firstname + "','" + hand + "','"
-				+ lastname + "," + timePlayed + "," + nbWin + "," + ranking + ")");
+				+ "VALUES ( '" + age + "', '" + category + "','" + country + "','" + firstname + "','" + hand + "','"
+				+ lastname + "', '" + timePlayed + "' , '" + nbWin + "', '" + ranking + "')");
 	}
 
 	@Override

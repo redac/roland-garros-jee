@@ -39,13 +39,18 @@ public class PlayerAddServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// D'abord on recupere les paramètres
+		String ageString = req.getParameter("age");
 		String firstname = req.getParameter("firstname");
 		String lastname = req.getParameter("lastname");
 		String hand = req.getParameter("hand");
-		String categorie = req.getParameter("categorie");
+		String rankingString = req.getParameter("rank");
+		String category = req.getParameter("category");
 		String country = req.getParameter("country");
+		
+		
 
-		playerService.createPlayer2(firstname, lastname, hand, categorie, country);
+		playerService.createPlayer(Integer.parseInt(ageString), category, country, firstname, hand, lastname, 0, 0, Integer.parseInt(rankingString));
+
 		doProcess(req, resp);
 
 	}

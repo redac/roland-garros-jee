@@ -15,9 +15,10 @@ La branche comportant la version la plus à jour du code est la branche `main`.
 URL de débug locale par défaut : [http://localhost:8080/roland-garros-jee/](http://localhost:8080/roland-garros-jee/)
 
 Login compte administrateur : 
-`username: fft_admin`
-`password: fftadmin123`
- 
+```
+username: fft_admin 
+password: fftadmin123
+```
 
 ## Liste de fonctionnalités : 
 

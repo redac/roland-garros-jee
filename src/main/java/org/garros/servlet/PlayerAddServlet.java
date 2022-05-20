@@ -47,8 +47,7 @@ public class PlayerAddServlet extends HttpServlet {
 		String category = req.getParameter("category");
 		String country = req.getParameter("country");
 		
-		
-
+	
 		playerService.createPlayer(Integer.parseInt(ageString), category, country, firstname, hand, lastname, 0, 0, Integer.parseInt(rankingString));
 
 		doProcess(req, resp);

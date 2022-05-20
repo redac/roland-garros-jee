@@ -35,8 +35,26 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 		<div class="flex justify-center items-center bg-grey-lightest">
 			<div class="container mx-auto px-4 sm:px-8">
 				<div class="py-8">
-					<div>
+					<div class="flex flex-col justify-center">
 						<h2 class="text-2xl font-semibold leading-tight">Players</h2>
+						<!-- Vérification connection -->
+					<%
+					Object connecte = session.getAttribute("connecte");
+
+					if (connecte != null) {
+						User user = (User) session.getAttribute("connected_user");
+						user.aff();
+					%>
+					<div class="flex justify-between items-center my-4">
+						<form action="playeradd.jsp">
+							<button
+								class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
+								New player</button>
+						</form>
+					</div>
+					<%
+					}
+					%>
 					</div>
 					<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
 						<div
@@ -151,24 +169,6 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 							</table>
 						</div>
 					</div>
-					<!-- Vérification connection -->
-					<%
-					Object connecte = session.getAttribute("connecte");
-
-					if (connecte != null) {
-						User user = (User) session.getAttribute("connected_user");
-						user.aff();
-					%>
-					<div class="flex justify-between items-center my-4">
-						<form action="playeradd.jsp">
-							<button
-								class="bg-rolandgreen hover:bg-green-900 text-white font-bold rounded py-2 px-4">
-								New player</button>
-						</form>
-					</div>
-					<%
-					}
-					%>
 				</div>
 			</div>
 		</div>

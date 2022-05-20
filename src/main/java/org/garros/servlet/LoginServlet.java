@@ -62,7 +62,6 @@ public class LoginServlet extends HttpServlet {
 
 			if (rs.next()) {
 				connected = true;
-				System.out.println("connecteeed");
 				int uid = rs.getInt("uid");
 				user.setUid(uid);
 				String account_type = rs.getString("account_type");

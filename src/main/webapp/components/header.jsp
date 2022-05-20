@@ -49,7 +49,7 @@
 </head>
 <!-- Top Nav -->
 <div
-	class="font-sans w-full bg-white opacity-100 sticky top-0 shadow z-1">
+	class="font-sans w-full bg-white opacity-100 sticky top-0 shadow z-40">
 	<form class="container mx-auto">
 		<div class="w-full flex justify-between items-center py-4 px-8">
 			<!-- Brand -->

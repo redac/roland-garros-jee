@@ -1,5 +1,12 @@
 # Roland-Garros JEE
 
+Les livrables sont disponibles sous la rubrique [releases](https://github.com/redac/roland-garros-jee/releases) de Github.
+
+Login compte administrateur : 
+`username: fft_admin`
+`password: fftadmin123`
+
+
 Liste de fonctionnalités : 
 
 ### Todo 

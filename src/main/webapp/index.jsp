@@ -28,10 +28,14 @@
 		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
 		<div
-			class="flex flex-grow justify-center items-center bg-grey-lightest">
+			class="flex flex-col justify-center items-center bg-grey-lightest">
 			<h1 class="text-6xl font-extrabold">
 				<span
-					class="bg-clip-text drop-shadow-md text-slate-200 hover:text-rolandgreen">ROLAND-GARROS</span>
+					class="bg-clip-text m-4 drop-shadow-md text-slate-200 hover:text-rolandgreen">ROLAND-GARROS</span>
+			</h1>
+			<h1 class="text-6xl font-extrabold">
+				<span
+					class="bg-clip-text m-4 drop-shadow-md text-slate-200">The French Open</span>
 			</h1>
 		</div>
 		<!-- Footer -->

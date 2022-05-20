@@ -140,7 +140,8 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-											<p class="text-gray-900 whitespace-no-wrap"><%=firstnameWinner%> <%=lastnameWinner%></p>
+											<p class="text-gray-900 whitespace-no-wrap"><%=firstnameWinner%>
+												<%=lastnameWinner%></p>
 										</td>
 										<td
 											class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -195,9 +196,7 @@ List<Score> listScoreSet3 = (List<Score>) request.getAttribute("listScoreSet3");
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Footer -->
-	<div>
+		<!-- Footer -->
 		<jsp:include page='components/footer.jsp' />
 	</div>
 </body>

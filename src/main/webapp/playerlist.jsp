@@ -28,7 +28,7 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 </head>
 <body>
 	<div
-		class="flex flex-col h-screen font-sans antialiased bg-grey-lightest">
+		class="flex flex-col justify-between h-screen font-sans antialiased bg-grey-lightest">
 		<!-- Top Nav -->
 		<jsp:include page='components/header.jsp' />
 		<!-- Content -->
@@ -183,9 +183,10 @@ List<Player> listPlayers = (List<Player>) request.getAttribute("listPlayers");
 				</div>
 			</div>
 		</div>
-
 	</div>
 	<!-- Footer -->
-	<jsp:include page='components/footer.jsp' />
+	<div>
+		<jsp:include page='components/footer.jsp' />
+	</div>
 </body>
 </html>

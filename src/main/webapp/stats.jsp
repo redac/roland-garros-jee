@@ -303,6 +303,5 @@ List<Player> listPlayersTimeWomen = (List<Player>) request.getAttribute("listPla
 		<!-- Footer -->
 		<jsp:include page='components/footer.jsp' />
 	</div>
-
 </body>
 </html>

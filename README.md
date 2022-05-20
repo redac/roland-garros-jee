@@ -1,15 +1,25 @@
-# Roland-Garros JEE
+# Développement du site Roland-Garros sur Java EE
+Groupe 6 :
+- Pablo BOUTTES
+- Loukas DUQUÉ
+- Nedhir EBNOU
+- Angeline HA
+- Reda KHERMACH
+- Mathieu LIRZIN
 
+## Livrables et login
 Les livrables sont disponibles sous la rubrique [releases](https://github.com/redac/roland-garros-jee/releases) de Github.
+
+La branche comportant la version la plus à jour du code est la branche `main`.
+
+URL de débug locale par défaut : [http://localhost:8080/roland-garros-jee/](http://localhost:8080/roland-garros-jee/)
 
 Login compte administrateur : 
 `username: fft_admin`
 `password: fftadmin123`
+ 
 
-
-Liste de fonctionnalités : 
-
-### Todo 
+## Liste de fonctionnalités : 
 
 
 - [x] Liste des joueurs :

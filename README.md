@@ -1,11 +1,11 @@
 # Développement du site Roland-Garros sur Java EE
 Groupe 6 :
-- Pablo BOUTTES
-- Loukas DUQUÉ
-- Nedhir EBNOU
-- Angeline HA
-- Reda KHERMACH
-- Mathieu LIRZIN
+- Pablo B.
+- Loukas D.
+- Nedhir E.
+- Angeline H.
+- Reda K.
+- Mathieu L.
 
 ## Livrables et login
 Les livrables sont disponibles sous la rubrique [releases](https://github.com/redac/roland-garros-jee/releases) de Github.
